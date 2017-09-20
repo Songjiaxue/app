@@ -1,0 +1,41 @@
+;~function () {
+    var app = function () {
+        this.submitBtn = $('[data-selector="forget-btn"]');
+        this.tel = $('[data-selector="tel"]');
+        this.code = $('[data-selector="code"]');
+        this.pwd = $('[data-selector="password"]');
+    };
+    app.prototype.init = function () {
+        this.submit();
+    };
+    app.prototype.submit = function () {
+        var self = this;
+        self.submitBtn.on('tap' , function () {
+            var code = self.code.val(),
+                pwd = self.pwd.val(),
+                tel = self.tel.val();
+            if( tel.length != 11 ) return $.api.toast('手机号不正确');
+            if( !pwd ) return $.api.toast('密码未填写');
+            if(!code) return $.api.toast('验证码未填写');
+            if(code.length != 6) return $.api.toast('验证码不正确');
+            self.ajax({
+                tel : tel,
+                password : pwd,
+                code : code
+            });
+        });
+    };
+    app.prototype.ajax = function (data) {
+        $.ajax({
+            url : 'member/info/password',
+            data : data
+        }).then(function (err,ret) {
+            if(!!err) return $.api.toast(err);
+            $.api.toast(ret.msg);
+            $.api.closeWin();
+        });
+    };
+    $.forgetPwd = function () {
+        return new app();
+    }
+}();

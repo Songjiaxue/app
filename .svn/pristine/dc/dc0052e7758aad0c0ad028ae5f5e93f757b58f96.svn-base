@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no" />
+    <title>我的积分</title>
+    <link rel="stylesheet" href="../../dist/css/api.css">
+    <link rel="stylesheet" href="../../dist/css/icon.css">
+    <link rel="stylesheet" href="../../dist/css/app.css">
+</head>
+<body data-main="userRegi">
+    <div class="js-container">
+        <div class="_regi-in">
+            <div class="header">
+                <div class="icon icon-lt" data-event="closeWin"></div>
+                <div class="title">
+                    手机号注册
+                </div>
+            </div>
+            <div class="main">
+                <div class="head-img">
+                    <div class="img" data-selector="avatar" data-event="uploadAvatar"></div>
+                </div>
+                <div class="regi">
+                    <div class="regi-group">
+                        <div class="regi-item">
+                            <i class="icon-account"></i>
+                            <div>
+                                <input type="tel" placeholder="请输入手机号" data-selector="tel" />
+                            </div>
+                            <i class="icon-cancel-circled"></i>
+                        </div>
+                        <div class="regi-item ">
+                            <i class="icon-password"></i>
+                            <div>
+                                <input type="text" placeholder="请输入验证码" data-selector="code" />
+                                <label class="get-verify" data-event="sendSMSCode" data-params='{"tip":"您正在注册美乐吧账号"}'>
+                                    点击获取
+                                </label>
+                            </div>
+                        </div>
+                        <div class="regi-item">
+                            <i class="icon-account"></i>
+                            <div>
+                                <input type="password" placeholder="请输入密码" data-selector="password" />
+                            </div>
+                            <i class="icon-cancel-circled"></i>
+                        </div>
+                        <div class="regi-item border">
+                            <i class="icon-account"></i>
+                            <div>
+                                <input type="password" placeholder="再次输入密码" data-selector="password-again" />
+                            </div>
+                            <i class="icon-cancel-circled"></i>
+                        </div>
+                        <div class="regi-item"></div>
+                    </div>
+                    <div class="regi-btn">
+                        <div class="regiin btn" data-selector="regi-btn">快速注册</div>
+                    </div>
+
+                </div>
+                <div class="main-tips">
+                    注册即可享受更多专属服务
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../dist/js/lib/jquery.min.js"></script>
+    <script src="../../dist/js/lib/async.min.js"></script>
+    <script src="../../dist/js/app.js"></script>
+    <script>apiready = $.init;</script>
+</body>
+</html>

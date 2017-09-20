@@ -1,0 +1,209 @@
+@import "../common"
+
+
+._beauty-create-order
+    header
+        height: 45px
+        background-color: $header-color
+        position: fixed
+        top: 0px
+        left: 0px
+        right: 0px
+        color: #FFFFFF
+        .back
+            position: absolute
+            left: 5px
+            font-size: 2.4rem
+            line-height: 1em
+            top: 50%
+            transform: translateY(-50%)
+            -webkit-transform: translateY(-50%)
+        .title
+            @include auto_center
+            font-size: 1.8rem
+            line-height: 1em
+    .main
+        padding-top: 45px
+        padding-bottom: 45px
+        .address
+            @include pr
+            @include flex
+            padding-top: 10px
+            padding-bottom: 10px
+            font-size: 1.2rem
+            background-color: #FFFFFF
+            min-height: 50px
+            &>div
+                @include flex_item
+            .beauty-address
+                margin-left: 5px
+                .info
+                    margin-bottom: 3px
+                    @include flex
+                    &>div
+                        @include flex-item
+                        max-width: 50%
+                        @include font-over
+                    .nick
+                        text-align: left
+                        max-width: 150px
+                    .tel
+                        text-align: right
+            .icon
+                position: relative
+                max-width: 35px
+                &:before
+                    position: absolute
+                    top: 50%
+                    transform: translateY(-50%)
+                    -webkit-transform: translateY(-50%)
+                &.place
+                    &:before
+                        font-size: 2.8rem
+                        color: #808080
+                        left: 0px
+                &.gt
+                    &:before
+                        font-size: 1.6rem
+                        color: #bfbfbf
+                        right: -6px
+
+        .beauty-info
+            margin-top: 5px
+            .title
+                height: 38px
+                background-color: #FFFFFF
+                position: relative
+                @include pr
+                .head
+                    width: 25px
+                    height: 25px
+                    @include auto-img
+                    border-radius: 3px
+                    position: absolute
+                    top: 50%
+                    transform: translateY(-50%)
+                    -webkit-transform: translateY(-50%)
+                    left: 10px
+                p
+                    position: absolute
+                    top: 50%
+                    transform: translateY(-50%)
+                    -webkit-transform: translateY(-50%)
+                    left: 45px
+                    font-size: 1.4rem
+                    color: #4c4c4c
+                &:before
+                    position: absolute
+                    top: 50%
+                    transform: translateY(-50%)
+                    -webkit-transform: translateY(-50%)
+                    right: 5px
+                    font-size: 1.4rem
+                    color: #bfbfbf
+            .context
+                @include flex
+                padding: 10px
+                &>div
+                    @include flex-item
+
+                .head
+                    @include auto-img
+                    width: 80px
+                    height: 80px
+                    max-width: 80px
+                    min-width: 80px
+                .info
+                    margin-left: 10px
+                    position: relative
+                    &>div
+                        margin-top: 5px
+                    &-title
+                        @include text-over()
+                        color: #333333
+                        font-weight: 600
+                        font-size: 1.2rem
+                    &-price
+                        font-size: 1.4rem
+                        color: #d95757
+                        position: absolute
+                        bottom: 0px
+                        left: 0px
+                    &-desc
+                        color: #999999
+                        
+        .beauty-lists
+            &-group
+                margin-bottom: 5px
+            &-item
+                height: 38px
+                background-color: #FFFFFF
+                border-bottom: 1px solid #e7e8ea
+                position: relative
+                font-size: 1.2rem
+                &.number
+                    .title
+                        position: absolute
+                        top: 50%
+                        left: 10px
+                        transform: translateY(-50%)
+                        -webkit-transform: translateY(-50%)
+                    .hd
+                        position: absolute
+                        top: 50%
+                        right: 10px
+                        transform: translateY(-50%)
+                        -webkit-transform: translateY(-50%)
+                        @include flex
+                        label,input
+                            @include flex-item
+                        label
+                            display: block
+                            max-width: 21px
+                            width: 21px
+                            min-width: 21px
+                            height: 21px
+                            background-color: #d9d9d9
+                            text-align: center
+                            line-height: 21px
+                        input
+                            max-width: 35px
+                            width: 35px
+                            min-width: 35px
+                            height: 21px
+                            text-align: center
+                            line-height: 21px
+                &.other
+                    @include flex
+                    @include pr
+                    .title,.hd
+                        line-height: 38px
+                        @include flex-item
+                        input
+                            width: 100%
+                    .title
+                        max-width: 65px
+    footer
+        position: fixed
+        bottom: 0px
+        right: 0px
+        left: 0px
+        background-color: #FFFFFF
+        border-top: 1px solid #d6d7dc
+        height: 44px
+        @include flex
+        .result,.submit
+            @include flex-item
+            line-height: 44px
+        .result
+            text-align: right
+            font-size: 1.4rem
+            color: #808080
+            span
+                margin-right: 15px
+                color: #d95757
+        .submit
+            text-align: center
+            font-size: 1.6rem
+            color: #FFFFFF
+            background-color: #d95757

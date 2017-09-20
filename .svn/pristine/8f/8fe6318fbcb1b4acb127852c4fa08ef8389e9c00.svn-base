@@ -1,0 +1,235 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no" />
+    <title>商品详情</title>
+    <link rel="stylesheet" href="../../dist/css/api.css">
+    <link rel="stylesheet" href="../../dist/css/icon.css">
+    <link rel="stylesheet" href="../../dist/css/app.css">
+</head>
+<body>
+    <div>
+        <div class="_cargo-assess">
+            <div class="header">
+                <div class="icon icon-lt" data-event="closeWin"></div>
+                <div class="title">
+                    评论详情
+                </div>
+            </div>
+            <div class="main index">
+                <div class="tools">
+                    <div class="back">
+                        <i class="icon-lt"></i>
+                    </div>
+                    <div class="collect">
+                        <i class="icon-m-tools-4"></i>
+                    </div>
+                </div>
+                <div class="banner">
+                    <div class="banner-warp js-slider swipe">
+                        <div class="banner-group swipe-wrap">
+                            <div class="banner-item" style="background-image: url('../../images/info-banner.jpg')"></div>
+                            <div class="banner-item" style="background-image: url('../../images/info-banner.jpg')"></div>
+                            <div class="banner-item" style="background-image: url('../../images/info-banner.jpg')"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 限时抢购去掉原价 ， 否则去掉已抢和结束时间-->
+                <div class="details-title">
+                    <div class="price fl">
+                        ¥ 699.9
+                    </div>
+                    <div class="price old fl">
+                        ¥ 899.9
+                    </div>
+                    <div class="price over fl">
+                        已抢998件
+                    </div>
+                    <div class="time fr">
+                        距离结束： 15:03:21
+                    </div>
+                </div>
+                <div class="cargo-title">
+                    依丝泉美白精华组合帮你锁住水分让你做“水漾女人”
+                </div>
+                <div class="ui-tool-wrap">
+                    <div class="ui-tool icon-gt">
+                        <div class="ui-tool-in">
+                            美乐吧承诺：一旦发现商家宰客、欺客，经查明属实，将直接返现金2000元
+                        </div>
+                    </div>
+                </div>
+                <div class="ui-tool-wrap">
+                    <div class="ui-tool icon-gt border">
+                        <div class="ui-tool-in">
+                            <!-- loop -->
+                            <div class="ui-tool-group">
+                                <!-- loop -->
+                                <div class="ui-tool-item">
+                                    <div class="ui-tool-icon">
+                                        新
+                                    </div>
+                                    <div class="ui-tool-desc">
+                                        新品推荐
+                                    </div>
+                                </div>
+                                <div class="ui-tool-item">
+                                    <div class="ui-tool-icon">
+                                        减
+                                    </div>
+                                    <div class="ui-tool-desc">
+                                        积分可抵20
+                                    </div>
+                                </div>
+                                <!-- loop end -->
+                            </div>
+                            <!--loop end -->
+                        </div>
+                    </div>
+                    <div class="ui-tool icon-gt">
+                        <div class="ui-tool-in">
+                            <div class="ui-tool-group">
+                                <div class="ui-tool-item">
+                                    <div class="ui-tool-icon">
+                                        券
+                                    </div>
+                                    <div class="ui-tool-desc">
+                                        优惠券可领
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 详情 -->
+                <div class="ui-tool-wrap">
+                    <div class="ui-tool icon-gt border">
+                        <div class="ui-tool-in">
+                            <div class="ui-tool-group">
+                                <div class="ui-tool-item">
+                                    <div class="ui-tool-desc">
+                                        详情
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 评价详情5个加更多按钮 -->
+                    <div class="ui-tool-infor">
+                        <!-- html 丢这里 -->
+                    </div>
+                </div>
+                <!-- 评价 -->
+                <div class="ui-tool-wrap">
+                    <div class="ui-tool icon-gt border">
+                        <div class="ui-tool-in">
+                            <div class="ui-tool-group">
+                                <div class="ui-tool-item">
+                                    <div class="ui-tool-desc">
+                                        宝贝评价（688）
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 评价详情5个加更多按钮 -->
+                    <div class="main assess">
+                        <div class="lists">
+                            <div class="lists-group">
+                                <div class="lists-item">
+                                    <div class="title">
+                                        <div class="head">
+                                        </div>
+                                        <div class="nickname">
+                                            S***姐<span>V1</span>
+                                        </div>
+                                    </div>
+                                    <div class="desc">
+                                        该组合是我现在买的最划算的一次，之前还买过上千块的，效果是一样的.
+                                    </div>
+                                    <div class="img">
+                                        <div class="img-item"></div>
+                                        <div class="img-item"></div>
+                                        <div class="img-item"></div>
+                                        <div class="img-item"></div>
+                                    </div>
+                                    <div class="end">
+                                        2016.08.01 产品类型：组合套装
+                                    </div>
+                                </div>
+                                <div class="lists-item">
+                                    <div class="title">
+                                        <div class="head">
+                                        </div>
+                                        <div class="nickname">
+                                            S***姐<span>V1</span>
+                                        </div>
+                                    </div>
+                                    <div class="desc">
+                                        该组合是我现在买的最划算的一次，之前还买过上千块的，效果是一样的.
+                                    </div>
+                                    <div class="img">
+                                        <div class="img-item"></div>
+                                        <div class="img-item"></div>
+                                        <div class="img-item"></div>
+                                        <div class="img-item"></div>
+                                    </div>
+                                    <div class="end">
+                                        2016.08.01 产品类型：组合套装
+                                    </div>
+                                </div>
+                                <div class="lists-item">
+                                    <div class="title">
+                                        <div class="head">
+                                        </div>
+                                        <div class="nickname">
+                                            S***姐<span>V1</span>
+                                        </div>
+                                    </div>
+                                    <div class="desc">
+                                        该组合是我现在买的最划算的一次，之前还买过上千块的，效果是一样的.
+                                    </div>
+                                    <div class="img">
+                                        <div class="img-item"></div>
+                                        <div class="img-item"></div>
+                                        <div class="img-item"></div>
+                                        <div class="img-item"></div>
+                                    </div>
+                                    <div class="end">
+                                        2016.08.01 产品类型：组合套装
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <div class="footer-group">
+                        <div class="footer-item">
+                            <div class="icon icon-cargo-home"></div>
+                            <p>店铺</p>
+                        </div>
+                        <div class="footer-item">
+                            <div class="icon icon-cargo-share"></div>
+                            <p>分享</p>
+                        </div>
+                        <div class="footer-item">
+                            <div class="icon icon-coin-tel"></div>
+                            <p>联系</p>
+                        </div>
+                        <div class="footer-item">
+                            立即购买
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../dist/js/lib/jquery.min.js"></script>
+    <script src="../../dist/js/lib/swipe.js"></script>
+    <script src="../../dist/js/app.js"></script>
+    <script>$.app.swipe();</script>
+</body>
+</html>

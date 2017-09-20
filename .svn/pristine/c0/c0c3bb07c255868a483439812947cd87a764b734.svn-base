@@ -1,0 +1,80 @@
+;~function () {
+
+    var app = function () {
+        this.bMap = api.require('bMap');
+        this.url = 'common/location/city';
+        this.callback;
+    };
+    app.prototype._getLocation = function (callback) {
+        var self = this;
+        callback = $.callback( callback );
+        self.bMap.getLocation({
+            accuracy: '100m',
+            autoStop: true,
+            filter: 1
+        }, function(ret, err) {
+            callback(err , ret);
+        });
+    };
+    app.prototype._getNameFromCoords = function (argument , callback) {
+        var self = this;
+        callback = $.callback( callback );
+        self.bMap.getNameFromCoords({
+            lon: argument.lon ,
+            lat: argument.lat
+        }, function(ret, err) {
+            callback(err , ret);
+        });
+    };
+
+    app.prototype.city = function (callback) {
+        var self = this,
+            city = JSON.stringify(localStorage.city);
+        callback = $.callback(callback);
+        typeof city == 'object' ? callback(null , city) : async.waterfall([
+            function (cb) {
+                self._getLocation(cb);
+            },
+            function (ret ,cb ) {
+                self._getNameFromCoords( ret ,cb);
+            },
+            function (ret , cb) {
+                self._cityId(ret ,cb);
+            }
+        ],callback);
+        return self;
+    };
+    app.prototype._cityId = function (ret , callback) {
+        var self = this;
+        callback = $.callback(callback);
+        $.ajax({
+            url : self.url ,
+            data : {
+                city : ret.city.substring(0,2)
+            }
+        }).then(function (err ,res) {
+            var result = typeof res !== typeof void 0 ? $.extend({},res.data , {
+                address : ret.address + ret.poiList[0].name + '(' + ret.poiList[0].address + ')',
+                city : {
+                    city : ret.city,
+                    id : res.data.city.id
+                },
+                lon : ret.lon,
+                lat : ret.lat
+            }) : typeof void 0;
+            self.cache(err , result);
+            callback( err , result);
+        });
+    };
+    app.prototype.cache = function (err , ret) {
+        !!err || typeof ret !== 'object' ? localStorage.city = typeof void 0 : localStorage.city = JSON.stringify(ret);
+    };
+    app.prototype.error = function (err) {
+
+    };
+    return $.bMap = function () {
+        return new app();
+    };
+
+
+}();

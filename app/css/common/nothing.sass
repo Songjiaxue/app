@@ -1,0 +1,38 @@
+@import "../common"
+
+.not-login
+    &.hide
+        display: none
+    header
+        margin-top: 20px
+        height: 45px
+        background-color: #e6738e
+        color: #FFFFFF
+        .head
+            @include pr
+            .icon
+                position: absolute
+                top: 50%
+                left: 5px
+                font-size: 2.2rem
+                -webkit-transform: translate(0, -50%)
+                transform: translate(0, -50%)
+            &-item:last-child
+                @include auto_center
+                font-size: 1.6rem
+    .main
+        .content
+            font-size: 1.4rem
+            color: #999999
+            margin-top: 30px
+            text-align: center
+        .btn
+            @include auto_center
+            width: 40%
+            height: 45px
+            background-color: #e6738e
+            text-align: center
+            line-height: 45px
+            font-size: 1.6rem
+            color: #FFFFFF
+

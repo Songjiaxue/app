@@ -1,0 +1,83 @@
+;~function () {
+    var app = function () {
+        this.$btn = $('[data-selector="user-login-btn"]');
+        this.$tel = $('[data-selector="tel"]');
+        this.$pwd = $('[data-selector="password"]');
+    };
+
+    app.prototype.init = function () {
+        var self = this;
+        self.$btn.on('tap' , function () {
+            self.login();
+        });
+    };
+    //账号密码登陆场景
+    app.prototype.login = function () {
+        var self = this;
+        async.waterfall([
+            function (cb) {
+                self.ajax(cb);
+            }
+        ],function (err,ret) {
+            if(err) return $.api.toast(err);
+            self.login_success(ret);
+        });
+    };
+    app.prototype.ajax = function (callback) {
+        var self = this,
+            tel =  self.$tel.val(),
+            pwd = self.$pwd.val();
+        if(!tel) return callback('手机号不正确');
+        if(!pwd) return callback('密码未填写');
+        $.ajax({
+            url : 'member/login/login',
+            data : {
+                tel : tel,
+                password :  pwd
+            }
+        }).then(callback);
+    };
+    //以下是授权登陆场景
+    app.prototype.qqLogin = function () {
+        var self = this;
+        var qq = $.qq();
+        qq.init();
+        qq.login(function (ret) {
+            async.waterfall([
+                function (cb) {
+                    self.qqAjax(ret,cb);
+                }
+            ],function (err,ret) {
+                if(err) return $.api.toast(err);
+                if(ret.data.need_tel) return self.goBindTel({
+                    token : ret.data.token,
+                    avatar : qq.info.avatar
+                });
+                self.login_success(ret);
+            });
+        });
+    };
+    app.prototype.qqAjax = function (data,callback) {
+          $.ajax({
+              url : 'member/login/auth',
+              data : data
+          }).then( callback );
+    };
+    app.prototype.login_success = function (ret) {
+        $.logEvent().sendLogin(ret);
+        $.api.closeWin();
+    };
+    /**
+     * 前往绑定手机号页面
+     */
+    app.prototype.goBindTel = function (param) {
+        var self = this;
+        $.openWin({
+            name : 'wrl_bind_tel',
+            param : param
+        });
+    };
+    return $.userLogin = function () {
+        return new app();
+    };
+}();

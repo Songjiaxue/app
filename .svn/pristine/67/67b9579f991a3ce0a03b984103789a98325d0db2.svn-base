@@ -1,0 +1,104 @@
+;~function () {
+
+    var app = function () {
+        this.page = 1;
+        this.size = 10;
+        this.type = api.pageParam.type;
+        this.$wrap = $('[data-selector="item-wrap"]');
+        this.scroll = $.scroll();
+        this.pullRefresh = $.pullRefresh();
+        this.$loadMore = $('._load-more');
+    };
+    app.prototype.init = function () {
+        this.main();
+        this.refresh();
+    };
+    app.prototype.refresh = function () {
+        var self = this;
+        self.pullRefresh.set(function () {
+            self.main();
+        });
+    };
+    app.prototype.main = function () {
+        var self = this;
+        self.page = 1;
+        self.one();
+    };
+    app.prototype.one = function () {
+        var self = this;
+        self.scroll.removeListenerToBottom();
+        async.waterfall([
+            function (cb) {
+                self.ajax( cb );
+            },
+            function (ret ,cb) {
+                self.append( ret , cb );
+            },
+            function (ret , cb) {
+                self.iScroll(ret,cb);
+            }
+        ],function (err) {
+            $.echo();
+            self.pullRefresh.close();
+            if(err) return $.api.toast(err);
+            self.page += 1;
+        });
+    };
+    app.prototype.html = function (db) {
+        var html = '';
+        db.forEach(function (info) {
+            html += '<div class="lists-item"><div class="case">';
+            html += info.reason;
+            html += '</div><div class="time">';
+            html += info.create_time;
+            html += '</div><div class="coin">+';
+            html += info.point;
+            html += '</div></div>';
+        });
+        return html;
+    };
+    app.prototype.append = function ( ret  , callback) {
+        var self = this,
+            db = ret.data.info;
+
+        if(self.page == 1) self.$wrap.html( self.html(db) );
+        if(self.page != 1) self.$wrap.append( self.html(db) );
+        callback( null , ret );
+    };
+    app.prototype.iScroll = function (ret , callback) {
+        var self = this;
+        callback = $.callback(callback);
+        if( !ret.data.info.length || ret.data.info.length < self.size ) {
+            self.$loadMore.text('后面没有了')
+            return callback();
+        };
+        self.$loadMore.text('努力加载中');
+        self.scroll.addListenerToBottom(function () {
+            self.one();
+        });
+        callback();
+    };
+    app.prototype.delete = function (ret) {
+        var id = ret.id;
+        $.confirm('删除订单' , '是否删除此订单?注意：删除后不可恢复',function ($f) {
+            if(!$f) return false;
+            $('[data-selector="'+ id +'"]').remove();
+        });
+
+    };
+    app.prototype.ajax = function (callback) {
+        callback = $.callback( callback );
+        var self = this;
+        $.ajax({
+            url : 'member/bill/point',
+            data : {
+                page : self.page,
+                size : self.size,
+                type : self.type
+            }
+        }).then(callback);
+    };
+    return $.coinInfoItem = function () {
+        return new app();
+    };
+}();

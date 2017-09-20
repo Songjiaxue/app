@@ -1,0 +1,786 @@
+@import "common"
+/**个人设置主页**/
+.personal
+    header
+        position: fixed
+        top: 0px
+        left: 0px
+        right: 0px
+        border-bottom: 1px solid #d6d7dc
+        .header-group
+            height: 45px
+            background-color: #f5f5f5
+            color: #4c4c4c
+            font-size: 1.8rem
+            line-height: 45px
+            text-align: center
+            @include clearfix
+            @include pr
+            .header-item
+                float: left
+            .header-item:first-child
+                font-size: 2.2rem
+                width: 30px
+            .header-item:last-child
+                margin-left: -30px
+                width: 100%
+    .main
+        .list-group
+            margin-top: 55px
+            .list-item
+                background-color: #ffffff
+                height: 45px
+                line-height: 45px
+                @include pr
+                @include clearfix
+                &-left
+                    float: left
+                    color: #646464
+                    font-size: 1.2rem
+                    .icon
+                        margin-right: 10px
+                        font-size: 2rem
+                    .icon-person
+                        color: #eb4b4b
+                    .icon-opinion
+                        color: #4bb5eb
+                    .icon-check
+                        color: #e67e22
+                    .icon-about
+                        color: #34495e
+                &-right
+                    float: right
+                    font-size: 1.4rem
+                    color: #bfbfbf
+            .list-item:first-child
+                border-bottom: 1px solid #d6d7dc
+            .list-item:last-child
+                border-top: 1px solid #d6d7dc
+                margin-top: 10px
+    footer
+        .footer-wrap
+            position: fixed
+            left: 0
+            right: 0
+            bottom: 0
+            height: 50px
+            text-align: center
+            background-color: #808080
+            color: #ffffff
+            line-height: 50px
+            font-size: 1.8rem
+/**个人设置-意见反馈**/
+.personal_opinion
+    header
+        position: fixed
+        top: 0px
+        left: 0px
+        right: 0px
+        border-bottom: 1px solid #d6d7dc
+        .header-group
+            height: 45px
+            background-color: #f5f5f5
+            color: #4c4c4c
+            font-size: 1.8rem
+            line-height: 45px
+            text-align: center
+            @include clearfix
+            @include pr
+            .header-item
+                float: left
+            .header-item:first-child
+                font-size: 2.2rem
+                width: 30px
+            .header-item:last-child
+                margin-left: -30px
+                width: 100%
+    .main
+        margin-top: 55px
+        .title
+            color: #333333
+            font-size: 1.2rem
+            margin: 5px 0
+            @include pr
+        .inputText
+            @include pr
+            textarea
+                box-sizing: border-box
+                width: 100%
+                height: 150px
+                padding: 5px
+                color: #b2b2b2
+                font-size: 1.2rem
+                border: 1px solid #bfbfbf
+                resize: none
+        .camera
+            padding: 20px 10px
+            font-size: 5rem
+            color: #bfbfbf
+        .number
+            &-group
+                height: 45px
+                background-color: #ffffff
+                color: #666666
+                line-height: 45px
+                font-size: 1.2rem
+                @include pr
+            &-left
+                float: left
+            &-right
+                float: right
+                &-item
+                    float: left
+                &-item:first-child
+                    color: #e65c7c
+                    font-size: 1.2rem
+                .icon
+                    font-size: 1.6rem
+                    margin-top: -1px
+        .btn
+            background-color: #e65c7c
+            height: 45px
+            line-height: 45px
+            font-size: 1.8rem
+            width: 80%
+            margin: 80px auto
+            border-radius: 25px
+            color: #ffffff
+            text-align: center
+/**个人设置-个人资料**/
+.personal_data
+    img
+        width: 100%
+        display: block
+    header
+        position: fixed
+        top: 0px
+        left: 0px
+        right: 0px
+        border-bottom: 1px solid #d6d7dc
+        .header-group
+            height: 45px
+            background-color: #f5f5f5
+            color: #4c4c4c
+            font-size: 1.8rem
+            line-height: 45px
+            text-align: center
+            @include clearfix
+            @include pr
+            .header-item
+                float: left
+            .header-item:first-child
+                font-size: 2.2rem
+                width: 30px
+            .header-item:last-child
+                margin-left: -30px
+                width: 100%
+    .main
+        margin-top: 55px
+        .list-group
+            background-color: #ffffff
+            color: #646464
+            font-size: 1.2rem
+            .list-item
+                height: 45px
+                line-height: 45px
+                border-bottom: 1px solid #d6d7dc
+                @include pr
+                @include clearfix
+                &-left
+                    float: left
+                &-right
+                    float: right
+                    @include clearfix
+                    .right-item
+                        float: left
+                    .person
+                        width: 35px
+                        padding: 5px 0
+                    .icon
+                        margin-left: 5px
+                        font-size: 1.4rem
+                        color: #bfbfbf
+        .alert
+            position: fixed
+            left: 0px
+            right: 0px
+            top: 0px
+            bottom: 0px
+            display: none
+            background-color: rgba(154,154,154,0.35)
+            .alert-group
+                @include auto_center
+                width: 90%
+                .alert-item
+                    background-color: #ffffff
+                    border-bottom: 1px solid #d6d7dc
+                    font-size: 1.6rem
+                    color: #4c4c4c
+                    padding: 8px 0
+                    @include pr(20px)
+                    @include clearfix
+                    &-left
+                        float: left
+                .alert-item:first-child
+                    margin-bottom: 3px
+        .show
+            display: block
+/**个人设置-地址管理**/
+.personal_address
+    .left
+        float: left
+    .right
+        float: right
+    header
+        position: fixed
+        top: 0px
+        left: 0px
+        right: 0px
+        border-bottom: 1px solid #d6d7dc
+    .header-group
+        height: 45px
+        background-color: #f5f5f5
+        color: #4c4c4c
+        font-size: 1.8rem
+        line-height: 45px
+        text-align: center
+        @include clearfix
+        @include pr
+        .header-item
+            float: left
+        .header-item:first-child
+            font-size: 2.2rem
+            width: 30px
+        .header-item:last-child
+            margin-left: -30px
+            width: 100%
+    .main
+        margin-top: 55px
+        .list-group
+            .list-item
+                color: #333333
+                margin-bottom: 5px
+                background-color: #f2f2f2
+                padding-top: 5px
+                @include clearfix
+                &-top
+                    font-size: 1.4rem
+                    @include pr
+                    @include clearfix
+                &-center
+                    padding: 10px 0
+                    font-size: 1.2rem
+                    border-bottom: 1px solid #d6d7dc
+                    @include pr
+                &-bottom
+                    color: #666666
+                    font-size: 1.2rem
+                    line-height: 30px
+                    height: 30px
+                    @include clearfix
+                    @include pr
+                    .address-group,.address-item
+                        @include clearfix
+                    .mr25
+                        margin-right: 25px
+                    .icon
+                        font-size: 2.2rem
+                    .active
+                        color: #f83f6b
+
+/**个人设置-添加新地址**/
+.personal_addAddress
+    .left
+        float: left
+    .right
+        float: right
+    header
+        position: fixed
+        top: 0px
+        left: 0px
+        right: 0px
+        border-bottom: 1px solid #d6d7dc
+        .header-group
+            height: 45px
+            background-color: #f5f5f5
+            color: #4c4c4c
+            font-size: 1.8rem
+            line-height: 45px
+            text-align: center
+            @include clearfix
+            @include pr
+            .header-item
+                float: left
+            .header-item:first-child
+                font-size: 2.2rem
+                width: 30px
+            .header-item:nth-child(2)
+                margin-left: -30px
+                margin-right: -40px
+                width: 100%
+            .header-item:last-child
+                font-size: 1.4rem
+                width: 40px
+                color: #e6738e
+    .main
+        margin-top: 55px
+        .list-group
+            .list-item
+                background-color: #ffffff
+                color: #646464
+                font-size: 1.4rem
+                border-bottom: 1px solid #d6d7dc
+                height: 40px
+                line-height: 40px
+                @include clearfix
+                @include pr
+                input
+                    padding-left: 5px
+                    color: #646464
+                textarea
+                    padding: 10px 0
+                    color: #999999
+                    width: 100%
+                    resize: none
+                    font-size: 1.4rem
+            .list-item:nth-last-child(2)
+                height: 80px
+                color: #999999
+            .list-item:last-child
+                margin: 10px 0
+                text-align: left
+                .square
+                    width: 15px
+                    height: 15px
+                    text-align: center
+                    line-height: 15px
+                    border: 1px solid #999999
+                    margin: 13px 0
+                    .icon
+                        margin-left: -2px
+
+/**个人设置-账号与安全**/
+.personal_safe
+    .left
+        float: left
+    .right
+        float: right
+    header
+        position: fixed
+        top: 0px
+        left: 0px
+        right: 0px
+        border-bottom: 1px solid #d6d7dc
+        .header-group
+            height: 45px
+            background-color: #f5f5f5
+            color: #4c4c4c
+            font-size: 1.8rem
+            line-height: 45px
+            text-align: center
+            @include clearfix
+            @include pr
+            .header-item
+                float: left
+            .header-item:first-child
+                font-size: 2.2rem
+                width: 30px
+            .header-item:last-child
+                margin-left: -30px
+                width: 100%
+    .main
+        margin-top: 55px
+        .list-group
+            .list-item
+                background-color: #ffffff
+                color: #646464
+                font-size: 1.4rem
+                border-bottom: 1px solid #d6d7dc
+                height: 40px
+                line-height: 40px
+                @include clearfix
+                @include pr
+                .right
+                    color: #b2b2b2
+                .ml14
+                    margin-right: 22px
+                .icon
+                    font-size: 1.6rem
+            .list-item:nth-last-child(3)
+                margin-top: 10px
+
+/**个人设置-关于手机美乐吧**/
+.personal_about
+    .left
+        float: left
+    .right
+        float: right
+    header
+        position: fixed
+        top: 0px
+        left: 0px
+        right: 0px
+        border-bottom: 1px solid #d6d7dc
+        .header-group
+            height: 45px
+            background-color: #f5f5f5
+            color: #4c4c4c
+            font-size: 1.8rem
+            line-height: 45px
+            text-align: center
+            @include clearfix
+            @include pr
+            .header-item
+                float: left
+            .header-item:first-child
+                font-size: 2.2rem
+                width: 30px
+            .header-item:last-child
+                margin-left: -30px
+                width: 100%
+    .main
+        margin-top: 55px
+        .list-group
+            .list-item
+                background-color: #ffffff
+                color: #646464
+                font-size: 1.4rem
+                border-bottom: 1px solid #d6d7dc
+                height: 40px
+                line-height: 40px
+                @include clearfix
+                @include pr
+                .right
+                    color: #b2b2b2
+                    font-size: 1rem
+                    .icon
+                        font-size: 1.4rem
+/**个人设置-新消息通知**/
+.personal_newMessage
+    .left
+        float: left
+    .right
+        float: right
+    header
+        position: fixed
+        top: 0px
+        left: 0px
+        right: 0px
+        border-bottom: 1px solid #d6d7dc
+        .header-group
+            height: 45px
+            background-color: #f5f5f5
+            color: #4c4c4c
+            font-size: 1.8rem
+            line-height: 45px
+            text-align: center
+            @include clearfix
+            @include pr
+            .header-item
+                float: left
+            .header-item:first-child
+                font-size: 2.2rem
+                width: 30px
+            .header-item:last-child
+                margin-left: -30px
+                width: 100%
+    .main
+        margin-top: 55px
+        .list-group
+            .list-item
+                margin-bottom: 15px
+                &-title
+                    background-color: #cccccc
+                    font-size: 1.2rem
+                    height: 20px
+                    line-height: 20px
+                    color: #646464
+                    @include pr
+                &-content
+                    background-color: #ffffff
+                    padding: 10px
+                    @include clearfix
+                    .lineTop
+                        color: #646464
+                        font-size: 1.4rem
+                        padding: 2px 0
+                    .lineBottom
+                        color: #999999
+                        font-size: 1.2rem
+                        padding: 2px 0
+                    .right-wrap
+                        width: 15px
+                        height: 15px
+                        text-align: center
+                        line-height: 15px
+                        border: 1px solid #999999
+                        margin: 13px 0
+                        font-size: 1.4rem
+                        .icon
+                            margin-left: -2px
+                    .active
+                        background-color: #f83f6b
+                        color: #ffffff
+                        border: 1px solid #f83f6b
+                .bdb
+                    border-bottom: 1px solid #d6d7dc
+
+/**个人设置-消息**/
+.personal_message
+    .left
+        float: left
+    .right
+        float: right
+    img
+        width: 100%
+        display: block
+    header
+        position: fixed
+        top: 0px
+        left: 0px
+        right: 0px
+        border-bottom: 1px solid #d6d7dc
+        .header-group
+            height: 45px
+            background-color: #f5f5f5
+            color: #4c4c4c
+            font-size: 1.8rem
+            line-height: 45px
+            text-align: center
+            @include clearfix
+            @include pr
+            .header-item
+                float: left
+            .header-item:first-child
+                font-size: 2.2rem
+                width: 30px
+            .header-item:last-child
+                margin-left: -30px
+                width: 100%
+    .main
+        margin-top: 45px
+        .list-group
+            .list-item
+                border-bottom: 1px solid #d6d7dc
+                background-color: #ffffff
+                padding: 10px 10px
+                @include clearfix
+                .icon-wrap
+                    width: 35px
+                    height: 35px
+                    border-radius: 5px
+                    margin-right: 10px
+                    line-height: 35px
+                    text-align: center
+                    position: relative
+                    .circle
+                        width: 10px
+                        height: 10px
+                        border-radius: 5px
+                        background-color: #e51717
+                        position: absolute
+                        right: -5px
+                        top: -5px
+                        display: none
+                    .show
+                        display: block
+                    .icon
+                        font-size: 2.4rem
+                        color: #ffffff
+                .right
+                    display: none
+                .right-wrap
+                    width: 17px
+                    height: 17px
+                    border: 1px solid #d6d7dc
+                    border-radius: 9px
+                    color: #999999
+                    font-size: 1.4rem
+                    line-height: 18px
+                    text-align: center
+                    .icon
+                        margin-left: -1px
+                .show
+                    display: block
+                .active
+                    background-color: #e65c7c
+                    color: #ffffff
+                    border: 1px solid #e65c7c
+                .lineTop
+                    color: #646464
+                    font-size: 1.4rem
+                .lineBottom
+                    color: #999999
+                    font-size: 1.2rem
+                    @include font-over
+                .right
+                    color: #999999
+                    font-size: 1.2rem
+                .color1
+                    background-color: #e55c5c
+                .color2
+                    background-color: #e5a15c
+                .color3
+                    background-color: #e55ca0
+                .color4
+                    background-color: #eab8d0
+    footer
+        position: fixed
+        left: 0
+        right: 0
+        bottom: 0
+        background-color: #ffffff
+        color: #666666
+        font-size: 1.8rem
+        height: 45px
+        line-height: 25px
+        border-top: 1px solid #d6d7dc
+        .footer-group
+            @include flex
+            padding: 10px 0
+            height: 25px
+        .footer-item
+            @include flex-item
+            text-align: center
+            box-shadow: 2px 0 0 0 #d6d7dc
+    .show
+        display: block
+
+/**个人设置-预约**/
+.personal_order
+    .left
+        float: left
+    .right
+        float: right
+    img
+        width: 100%
+        display: block
+    header
+        position: fixed
+        top: 0px
+        left: 0px
+        right: 0px
+        border-bottom: 1px solid #d6d7dc
+        .header-group
+            height: 45px
+            background-color: #f5f5f5
+            color: #4c4c4c
+            font-size: 1.8rem
+            line-height: 45px
+            text-align: center
+            @include clearfix
+            @include pr
+            .header-item
+                float: left
+            .header-item:first-child
+                font-size: 2.2rem
+                width: 30px
+            .header-item:last-child
+                margin-left: -30px
+                width: 100%
+    .main
+        margin-top: 55px
+        .list-group
+            .list-item
+                background-color: #ffffff
+                padding: 5px 0
+                margin-bottom: 5px
+                &-top
+                    @include clearfix
+                    @include pr
+                    height: 30px
+                    .left
+                        @include font-over
+                        font-size: 1.4rem
+                    .logo
+                        width: 24px
+                        padding: 3px 5px 3px 0
+                    .name
+                        height: 30px
+                        line-height: 30px
+                    .icon
+                        height: 30px
+                        line-height: 30px
+                    .right
+                        color: #e65c7c
+                        font-size: 1.2rem
+                        height: 30px
+                        line-height: 30px
+                &-center
+                    @include flex
+                    .center-item
+                        @include flex-item
+                        padding: 5px
+                    .center-img
+                        width: 100px
+                        max-width: 100px
+                        min-width: 100px
+                    .center-text
+                        &-top
+                            @include flex
+                            @include clearfix
+                            .left
+                                @include flex-item
+                                @include text-over
+                                color: #333333
+                                font-size: 1.4rem
+                            .right
+                                width: 55px
+                                max-width: 55px
+                                min-width: 55px
+                                margin-left: 20px
+                                font-size: 1.4rem
+                                text-align: right
+                                color: #333333
+                                .through
+                                    color: #bfbfbf
+                        &-center, &-bottom
+                            color: #bfbfbf
+                            font-size: 1.2rem
+                        &-center
+                            margin: 5px 0
+                        .all
+                            float: right
+                            font-size: 1rem
+                            color: #333333
+            .list-item-bottom
+                @include clearfix
+                padding: 10px
+                border-top: 1px solid #d6d7dc
+                border-bottom: 1px solid #d6d7dc
+                .btn-group
+                    @include clearfix
+                    .btn-item
+                        @include clearfix
+                        box-sizing: content-box
+                        height: 25px
+                        line-height: 25px
+                        text-align: center
+                        border-radius: 3px
+                        border: 1px solid #d6d7dc
+                        font-size: 1.2rem
+                        margin-left: 10px
+                        padding-right: 5px
+                        .icon
+                            font-size: 1.8rem
+                            color: #45b0e5
+            .list-item-time
+                text-align: center
+                font-size: 1.2rem
+                color: #808080
+                padding-top: 5px
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

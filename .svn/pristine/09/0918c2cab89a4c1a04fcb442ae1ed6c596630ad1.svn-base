@@ -1,0 +1,42 @@
+
+
+
+;~function () {
+
+    var app = function (err) {
+        this.err = err;
+        this.name = api.frameName;
+        this.init();
+    };
+
+    /**
+     * todo : 错误吗判断
+     * desc : 错误吗分发
+     * tips : 当错误码为出数字的时候，为正常错误码，当请求接口出现错误或者网络问题时，为字符串
+     */
+    app.prototype.init = function () {
+        // 错误分发
+        var self = this;
+        self.err = typeof self.err == 'string' ? false : self.err;
+        if(!self.err) return self.error();
+    };
+    app.prototype.error = function () {
+        var self = this;
+        $.api.toast(self.err);
+        self.openNetError();
+    };
+    app.prototype.openNetError = function () {
+        setTimeout(function () {
+            api.openFrame({
+                name: 'net-error',
+                url: 'widget://html/common/net-error.html'
+            });
+        },500);
+    };
+    return $.error = function (err) {
+        if(!err) return setTimeout(function () {
+            $('.js-load').hide();
+        },500);
+        return new app(err);
+    };
+}();

@@ -1,0 +1,115 @@
+@import "../common"
+
+._home_beauty
+    header
+        position: fixed
+        left: 0px
+        right: 0px
+        top: 0px
+        height: 45px
+        overflow: hidden
+        .header-group
+            height: 45px
+            background-color: #e6738e
+            @include flex
+            @include pr
+            .logo
+                @include auto_center
+                height: 30px
+                img
+                    height: 100%
+                    width: auto
+            .more
+                position: absolute
+                right: 10px
+                top: 50%
+                transform: translateY(-50%)
+                -webkit-transform: translateY(-50%)
+                font-size: 3.2rem
+                color: #ffffff
+                margin-top: 3px
+    nav
+        position: fixed
+        top: 45px
+        left: 0px
+        right: 0px
+        height: 35px
+        overflow: hidden
+        margin-bottom: 5px
+        .nav-group
+            height: 23px
+            line-height: 23px
+            font-size: 1.4rem
+            color: #333333
+            background-color: #FFFFFF
+            padding: 6px 0
+            @include flex
+            .nav-item
+                @include flex-item
+                text-align: center
+                box-shadow: 2px 0 0 0 #e5e5e5
+                .icon
+                    color: #cccccc
+    .main
+        margin-top: 5px
+    .list
+        &-item
+            padding: 20px 10px
+            background-color: #FFFFFF
+            margin-bottom: 5px
+            @include flex
+            &-left
+                @include flex-item
+                max-width: 115px
+                min-width: 115px
+                width: 115px
+                height: 88px
+                @include auto-img
+            &-right
+                @include flex-item
+                margin-left: 10px
+            &-title
+                @include font-over
+                height: 20px
+                line-height: 20px
+                max-width: 175px
+                font-size: 1.4rem
+                color: #666666
+                margin-bottom: 5px
+            &-info
+                @include text-over
+                font-size: 1rem
+                color: #666666
+                margin-bottom: 5px
+                line-height: 1.4rem
+                min-height: 28px
+            &-addr
+                @include clearfix
+                @include font-over
+                font-size: 1rem
+                color: #666666
+                height: 14px
+                line-height: 14px
+                margin-bottom: 3px
+                .addr-left
+                    @include font-over
+                    float: left
+                    text-align: left
+                    margin-left: -0.5rem
+                    max-width: 150px
+                .addr-right
+                    float: right
+                    .icon-place
+                        font-size: 1.4rem
+                        color: #60bfbf
+            &-review
+                font-size: 1rem
+                color: #999999
+                @include font-over
+                .icon-star
+                    font-size: 1.4rem
+                    margin-right: -2px
+                    &.active
+                        color: #f77c3e
+                span
+                    margin-left: 10px

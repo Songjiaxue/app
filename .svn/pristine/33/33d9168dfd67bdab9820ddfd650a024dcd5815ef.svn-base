@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0" name="viewport" />
+    <title>热点</title>
+    <link rel="stylesheet" href="../dist/css/api.css" />
+    <link rel="stylesheet" href="../dist/css/icon.css" />
+    <link rel="stylesheet" href="../dist/css/app.css" />
+</head>
+<body data-main="homeBbs">
+    <div class="js-container">
+        <div class="_home_bbs">
+            <header>
+                <div class="head-group">
+                    <div class="head-item active" data-event="bbsSwitchGroup" data-params="0"  data-selector="title">
+                        热点
+                    </div>
+                    <div class="head-item" data-event="bbsSwitchGroup" data-params="length" data-selector="title">
+                        姐妹说
+                    </div>
+                </div>
+            </header>
+            <nav class="index show" data-selector="nav">
+                <div class="nav-warp">
+                    <div class="nav-group" style="width: 500px" data-selector="up-nav-group"></div>
+                </div>
+            </nav>
+            <nav class="personal" data-selector="nav">
+                <div class="nav-warp">
+                    <div class="nav-group" data-selector="my-up-nav-group">
+                        <div class="nav-item active" data-event="bbsSwitchGroup" data-params="5">
+                            论坛
+                        </div>
+                        <div class="nav-item" data-event="bbsSwitchGroup" data-params="6">
+                            已经发布
+                        </div>
+                        <div class="nav-item" data-event="bbsSwitchGroup" data-params="7">
+                            我的点赞
+                        </div>
+                        <div class="nav-item" data-event="bbsSwitchGroup" data-params="8">
+                            我的评论
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <script src="../dist/js/lib/jquery.min.js"></script>
+    <script src="../dist/js/lib/async.min.js"></script>
+    <script src="../dist/js/app.js"></script>
+    <script>apiready = $.init;</script>
+</body>
+</html>

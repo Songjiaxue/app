@@ -1,0 +1,103 @@
+@import "../common"
+
+._assess
+    .header
+        height: 45px
+        background-color: $header-color
+        position: fixed
+        top: 20px
+        left: 0px
+        right: 0px
+        z-index: 10
+        color: #ffffff
+        .icon
+            @include auto_center
+            left: 15px
+            font-size: 2.2rem
+            line-height: 1em
+        .title
+            @include auto_center
+            font-size: 1.6rem
+            text-align: center
+            line-height: 1em
+    .nav
+        position: fixed
+        top: 65px
+        left: 0px
+        right: 0px
+        height: 45px
+        background-color: #FFFFFF
+        &-in
+            @include pr
+            @include clearfix
+            padding-top: 7.5px
+            padding-bottom: 7.5px
+            height: 30px
+            overflow: hidden
+        &-item
+            float: left
+            margin-right: 10px
+            height: 18px
+            text-align: center
+            background-color: #f2dae0
+            color: #666666
+            font-size: 1.6rem
+            padding-top: 6px
+            padding-bottom: 6px
+            padding-left: 15px
+            padding-right: 15px
+            border-radius: 15px
+            transition: 300ms all
+            -webkit-transition: 300ms all
+            &.active
+                background-color: #e61747
+                color: #FFFFFF
+
+    .lists
+        padding-top: 5px
+        &-item
+            @include pr
+            background-color: #FFFFFF
+            border-bottom: 1px solid #e7e8ea
+            padding-bottom: 5px
+            .title
+                padding: 5px 0px !important
+                position: relative
+                .head
+                    @include auto-img
+                    background-image: url("../../images/img.png")
+                    width: 30px
+                    height: 30px
+                    border-radius: 50%
+                .nickname
+                    position: absolute
+                    top: 50%
+                    left: 40px
+                    transform: translateY(-50%)
+                    -webkit-transform: translateY(-50%)
+                    font-size: 1.4rem
+                    line-height: 1.4rem
+                    height: 14px
+                    span
+                        color: #e6738e
+                        font-size: 1.0rem
+                        line-height: 1.4rem
+                        margin-left: 5px
+            .desc
+                font-size: 1.2rem
+                color: #333333
+                line-height: 1.2em
+                padding-bottom: 5px
+                padding-top: 5px
+            .img
+                @include clearfix
+                &-item
+                    @include auto-img
+                    float: left
+                    width: 57px
+                    height: 60px
+                    margin-right: 10px
+                    background-image: url("../../images/access1.jpg")
+            .end
+                padding-top: 10px
+                color: #808080

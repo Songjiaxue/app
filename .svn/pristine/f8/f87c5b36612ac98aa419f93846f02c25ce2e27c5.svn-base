@@ -1,0 +1,66 @@
+
+//左右浮动
+@mixin fl
+    float: left
+@mixin fr
+    float: right
+//清除浮动
+@mixin clearfix
+    zoom : 1
+    &:after
+        content: ''
+        display: block
+        clear: both
+//弹性盒子
+@mixin flex
+    display: block
+    display: -webkit-box
+    display: flex
+    display: -webkit-flex
+//弹性盒子元素
+@mixin flex-item($i : 1)
+    display: block
+    -webkit-box-flex: $i
+    box-flex: $i
+    flex: $i
+    -webkit-flex: $i
+//左右内边距
+@mixin pr($p: 10px)
+    padding-left: $p
+    padding-right: $p
+//左右外边距
+@mixin mr
+    margin-left: auto
+    margin-right: auto
+//绝对定位全居中
+@mixin auto_center
+    position: absolute
+    top: 50%
+    left: 50%
+    -webkit-transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%)
+//单行文本溢出省略
+@mixin font-over
+    text-overflow: ellipsis
+    -webkit-text-overflow: ellipsis
+    white-space: nowrap
+    -webkit-white-space: nowrap
+    overflow: hidden
+    display: block
+//多行文本超出省略
+@mixin text-over($i : 2)
+    overflow : hidden
+    text-overflow: ellipsis
+    -webkit-text-overflow: ellipsis
+    display: -webkit-box
+    -webkit-line-clamp: $i
+    -webkit-box-orient: vertical
+//自适应背景
+@mixin auto-img
+    background-position: center center
+    background-size: cover
+    background-repeat: no-repeat
+    background-image: url("../../images/blank.jpg")
+//颜色变量
+$header-color : #e6738e
+$status-color : #e65c7c

@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no" />
+    <title>全部评论</title>
+    <link rel="stylesheet" href="../../dist/css/api.css" />
+    <link rel="stylesheet" href="../../dist/css/icon.css" />
+    <link rel="stylesheet" href="../../dist/css/app.css" />
+</head>
+    <body data-main="setUser">
+        <div class="js-container">
+            <div class="_set-user">
+                <header>
+                    <div class="icon icon-lt" data-event="closeWin"></div>
+                    <div class="title">
+                        个人资料
+                    </div>
+                </header>
+                <div class="main">
+                    <div class="item-wrap">
+                        <div class="item-group">
+                            <div class="item avatar icon-gt">
+                                <div class="title">
+                                    头像
+                                </div>
+                                <div class="content">
+
+                                </div>
+                            </div>
+                            <div class="item icon-gt">
+                                <div class="title">
+                                    昵称
+                                </div>
+                                <div class="content">
+                                    娃娃哈
+                                </div>
+                            </div>
+                            <div class="item icon-gt">
+                                <div class="title">
+                                    性别
+                                </div>
+                                <div class="content">
+                                    男
+                                </div>
+                            </div>
+                            <div class="item icon-gt">
+                                <div class="title">
+                                    手机号
+                                </div>
+                                <div class="content">
+                                    130****7225
+                                </div>
+                            </div>
+                            <div class="item icon-gt">
+                                <div class="title">
+                                    出生年月日
+                                </div>
+                                <div class="content">
+                                    2016年9月14日
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="item-wrap">
+                        <div class="item-group">
+                            <div class="item icon-gt">
+                                <div class="title">
+                                    修改密码
+                                </div>
+                            </div>
+                            <div class="item icon-gt" data-event="openNewWin" data-params='{"name":"win_address"}'>
+                                <div class="title">
+                                    收货地址管理
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../../dist/js/lib/jquery.min.js"></script>
+        <script src="../../dist/js/lib/async.min.js"></script>
+        <script src="../../dist/js/lib/swipe.js"></script>
+        <script src="../../dist/js/lib/echo.min.js"></script>
+        <script src="../../dist/js/app.js"></script>
+        <script>apiready = $.init;</script>
+    </body>
+</html>
+
+
+
+

@@ -1,0 +1,50 @@
+
+@import "../common"
+.ui-alert
+    display: none
+    &.show
+        display: block
+    &-wrap
+        position: fixed
+        top: 0px
+        left: 0px
+        right: 0px
+        bottom: 0px
+        overflow: hidden
+        background-color: rgba(0,0,0,.75)
+        z-index: 10000
+    &-toast
+        @include auto_center
+        position: fixed
+        z-index: 10001
+        width: 285px
+        height: auto
+        background-color: #ffffff
+        color: #000
+    &-title
+        font-size: 16px
+        color: #e65c7c
+        padding-top: 10px
+        padding-bottom: 10px
+        font-weight: 600
+        border-bottom: 1px solid #e65c7c
+        line-height: 1em
+        &-in
+            @include pr
+    &-context
+        &-in
+            padding: 10px
+            line-height: 1.2em
+            font-size: 12px
+            min-height: 40px
+    &-btn
+        @include flex-item
+        height: 35px
+        line-height: 35px
+        text-align: center
+        font-size: 16px
+        box-shadow: 1px 0px 0px 0px #dfe0e4
+        &-group
+            @include flex
+            border-top: 1px solid #dfe0e4
+            overflow: hidden

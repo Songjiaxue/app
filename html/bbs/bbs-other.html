@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no" />
+    <title>已发布</title>
+    <link rel="stylesheet" href="../../dist/css/api.css" />
+    <link rel="stylesheet" href="../../dist/css/icon.css" />
+    <link rel="stylesheet" href="../../dist/css/weui.css" />
+    <link rel="stylesheet" href="../../dist/css/app.css" />
+</head>
+<body data-main="bbsOther">
+    <div class="js-container">
+        <div class="_main _home_bbs">
+            <div class="main other">
+                <div class="list-group" data-selector="html-content"></div>
+            </div>
+            <div class="_load-more">
+                正在努力加载
+            </div>
+        </div>
+        <div class="_toast">
+            <div id="load" class="show">
+                <div class="weui-mask_transparent"></div>
+                <div class="weui-toast">
+                    <i class="weui-loading weui-icon_toast"></i>
+                    <p class="weui-toast__content">数据加载中</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../dist/js/lib/jquery.min.js"></script>
+    <script src="../../dist/js/lib/async.min.js"></script>
+    <script src="../../dist/js/lib/echo.min.js"></script>
+    <script src="../../dist/js/app.js"></script>
+    <script>apiready = $.main;</script>
+</body>
+</html>

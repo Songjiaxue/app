@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0" name="viewport" />
+    <title>个人中心</title>
+    <link rel="stylesheet" href="../dist/css/api.css" />
+    <link rel="stylesheet" href="../dist/css/icon.css" />
+    <link rel="stylesheet" href="../dist/css/app.css" />
+</head>
+<body data-main="homeUser">
+    <div class="js-container">
+        <div class="_home_pres">
+            <div class="header">
+                <div class="header-in">
+                    <div class="header-login" data-selector="login">
+                        <div class="login-info-group">
+                            <div class="login-info head" style="background-image: url('../images/access3.jpg')" data-selector="avatar"></div>
+                            <div class="login-info sign" data-selector="signature">
+                                HI ，欢迎来美乐吧做客！
+                            </div>
+                            <div class="login-info nickname" data-selector="nick">
+                                TTSeven
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-logout" data-selector="logout">
+                        <div class="logout-btn-group">
+                            <div class="logout-btn login" data-event="openNewWin" data-params='{"name":"win_user_login"}'>
+                                立即登陆
+                            </div>
+                            <div class="logout-btn reg" data-event="openNewWin" data-params='{"name":"win_user_regi"}'>
+                                立即注册
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--订单区域-->
+            <div class="main">
+                <div class="m-order">
+                    <div class="order-in">
+                        <div class="order-title">
+                            我的订单
+                        </div>
+                        <div class="order-article">
+                            <div class="order-article-group">
+                                <div class="order-article-item">
+                                    <div class="icon icon-m-order-1">
+                                    </div>
+                                    <p>全部<span>(10)</span></p>
+                                </div>
+                                <div class="order-article-item">
+                                    <div class="icon icon-m-order-2">
+                                    </div>
+                                    <p>代付款 <span>(3)</span> </p>
+                                </div>
+                                <div class="order-article-item">
+                                    <div class="icon icon-m-order-3">
+                                    </div>
+                                    <p>代提货<span>(1)</span></p>
+                                </div>
+                                <div class="order-article-item">
+                                    <div class="icon icon-m-order-4">
+                                    </div>
+                                    <p>代评价<span>(6)</span></p>
+                                </div>
+                                <div class="order-article-item">
+                                    <div class="icon icon-m-order-5">
+                                    </div>
+                                    <p>售后服务</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-tools">
+                    <div class="tools-group">
+                        <div class="tools-item">
+                            <div class="icon icon-m-tools-1"></div>
+                            <div class="desc">
+                                签到
+                            </div>
+                        </div>
+                        <div class="tools-item" data-event="openShareAction">
+                            <div class="icon icon-m-tools-2"></div>
+                            <div class="desc">
+                                邀请好友
+                            </div>
+                        </div>
+                        <div class="tools-item">
+                            <div class="icon icon-m-tools-3"></div>
+                            <div class="desc">
+                                我的优惠券
+                            </div>
+                        </div>
+                        <div class="tools-item">
+                            <div class="icon icon-m-tools-4"></div>
+                            <div class="desc">
+                                我的收藏
+                            </div>
+                        </div>
+                        <div class="tools-item">
+                            <div class="icon icon-m-tools-5"></div>
+                            <div class="desc">
+                                扫一扫
+                            </div>
+                        </div>
+                        <div class="tools-item">
+                            <div class="icon icon-m-tools-6"></div>
+                            <div class="desc">
+                                我的预约
+                            </div>
+                        </div>
+                        <div class="tools-item" data-event="openNewWin" data-params='{"name":"win_set_index"}'>
+                            <div class="icon icon-m-tools-7"></div>
+                            <div class="desc">
+                                个人设置
+                            </div>
+                        </div>
+                        <div class="tools-item">
+                            <div class="icon icon-m-tools-8"></div>
+                            <div class="desc">
+                                信息
+                            </div>
+                            <div class="tips">
+                                1
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="m-rec">
+                    <div class="rec-title">
+                        为你推荐
+                    </div>
+                </div>
+                <div class="_home_beauty">
+                    <div class="list">
+                        <div class="list-group">
+                            <div class="list-item" data-event="openStoreWin">
+                                <div class="list-item-left">
+                                    <img src="../images/home-beauty.jpg" />
+                                </div>
+                                <div class="list-item-right">
+                                    <div class="list-item-title">
+                                        <p>克丽缇娜美容</p>
+                                        <div class="tips-group">
+                                            <div class="blue">促</div>
+                                            <div class="orange">减</div>
+                                            <div class="blue">折</div>
+                                        </div>
+                                    </div>
+                                    <div class="list-item-info">
+                                        Chlitina克丽缇娜在台湾诞生，以向天下女人传播美丽之道为目标以向天下女人传播美丽之道为目标以向天下女人传播美丽之道为目标
+                                    </div>
+                                    <div class="list-item-addr">
+                                        <div class="addr-left">
+                                            【杭州】 下沙龙湖天街
+                                        </div>
+                                        <div class="addr-right">
+                                            <i class="icon-place"></i>
+                                            <span>&lt;500m</span>
+                                        </div>
+                                    </div>
+                                    <div class="list-item-review">
+                                        <i class="icon-star active"></i>
+                                        <i class="icon-star active"></i>
+                                        <i class="icon-star active"></i>
+                                        <i class="icon-star active"></i>
+                                        <i class="icon-star"></i>
+                                        <span>142人评价</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-item"  data-event="openStoreWin">
+                                <div class="list-item-left">
+                                    <img src="../images/home-beauty.jpg" />
+                                </div>
+                                <div class="list-item-right">
+                                    <div class="list-item-title">
+                                        <span>克丽缇娜美容</span>
+                                        <span class="benefit blue">促</span>
+                                        <span class="benefit red">减</span>
+                                    </div>
+                                    <div class="list-item-info">
+                                        Chlitina克丽缇娜在台湾诞生，
+                                        以向天下女人传播美丽之道为目标...
+                                    </div>
+                                    <div class="list-item-addr">
+                                        <div class="addr-left">
+                                            【杭州】 下沙龙湖天街
+                                        </div>
+                                        <div class="addr-right">
+                                            <i class="icon-place"></i>
+                                            <span>&lt;500m</span>
+                                        </div>
+                                    </div>
+                                    <div class="list-item-review">
+                                        <i class="icon-star active"></i>
+                                        <i class="icon-star active"></i>
+                                        <i class="icon-star active"></i>
+                                        <i class="icon-star"></i>
+                                        <i class="icon-star"></i>
+                                        <span>142人评价</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-item"  data-event="openStoreWin">
+                                <div class="list-item-left">
+                                    <img src="../images/home-beauty.jpg" />
+                                </div>
+                                <div class="list-item-right">
+                                    <div class="list-item-title">
+                                        <span>克丽缇娜美容</span>
+                                        <span class="benefit blue">促</span>
+                                        <span class="benefit red">减</span>
+                                    </div>
+                                    <div class="list-item-info">
+                                        Chlitina克丽缇娜在台湾诞生，
+                                        以向天下女人传播美丽之道为目标...
+                                    </div>
+                                    <div class="list-item-addr">
+                                        <div class="addr-left">
+                                            【杭州】 下沙龙湖天街
+                                        </div>
+                                        <div class="addr-right">
+                                            <i class="icon-place"></i>
+                                            <span>&lt;500m</span>
+                                        </div>
+                                    </div>
+                                    <div class="list-item-review">
+                                        <i class="icon-star active"></i>
+                                        <i class="icon-star"></i>
+                                        <i class="icon-star"></i>
+                                        <i class="icon-star"></i>
+                                        <i class="icon-star"></i>
+                                        <span>142人评价</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-item"  data-event="openStoreWin">
+                                <div class="list-item-left">
+                                    <img src="../images/home-beauty.jpg" />
+                                </div>
+                                <div class="list-item-right">
+                                    <div class="list-item-title">
+                                        <span>克丽缇娜美容</span>
+                                        <span class="benefit blue">促</span>
+                                        <span class="benefit red">减</span>
+                                    </div>
+                                    <div class="list-item-info">
+                                        Chlitina克丽缇娜在台湾诞生，
+                                        以向天下女人传播美丽之道为目标...
+                                    </div>
+                                    <div class="list-item-addr">
+                                        <div class="addr-left">
+                                            【杭州】 下沙龙湖天街
+                                        </div>
+                                        <div class="addr-right">
+                                            <i class="icon-place"></i>
+                                            <span>&lt;500m</span>
+                                        </div>
+                                    </div>
+                                    <div class="list-item-review">
+                                        <i class="icon-star active"></i>
+                                        <i class="icon-star active"></i>
+                                        <i class="icon-star"></i>
+                                        <i class="icon-star"></i>
+                                        <i class="icon-star"></i>
+                                        <span>142人评价</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="list-item"  data-event="openStoreWin">
+                                <div class="list-item-left">
+                                    <img src="../images/home-beauty.jpg"  />
+                                </div>
+                                <div class="list-item-right">
+                                    <div class="list-item-title">
+                                        <span>克丽缇娜美容</span>
+                                        <span class="benefit blue">促</span>
+                                        <span class="benefit red">减</span>
+                                    </div>
+                                    <div class="list-item-info">
+                                        Chlitina克丽缇娜在台湾诞生，
+                                        以向天下女人传播美丽之道为目标...
+                                    </div>
+                                    <div class="list-item-addr">
+                                        <div class="addr-left">
+                                            【杭州】 下沙龙湖天街
+                                        </div>
+                                        <div class="addr-right">
+                                            <i class="icon-place"></i>
+                                            <span>&lt;500m</span>
+                                        </div>
+                                    </div>
+                                    <div class="list-item-review">
+                                        <i class="icon-star"></i>
+                                        <i class="icon-star"></i>
+                                        <i class="icon-star"></i>
+                                        <i class="icon-star"></i>
+                                        <i class="icon-star gray"></i>
+                                        <span>142人评价</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../dist/js/lib/jquery.min.js"></script>
+    <script src="../dist/js/lib/async.min.js"></script>
+    <script src="../dist/js/app.js"></script>
+    <script> apiready = $.init</script>
+</body>
+</html>

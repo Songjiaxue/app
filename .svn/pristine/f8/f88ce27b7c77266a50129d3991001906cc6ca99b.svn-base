@@ -1,0 +1,68 @@
+@import "common"
+
+
+._loading
+    position: fixed
+    top: 0px
+    left: 0px
+    right: 0px
+    bottom: 0px
+    overflow: hidden
+    background-color: #f2f2f2
+    z-index: 10000
+    .load
+        margin-top: 50px
+        width: 100px
+        @include mr
+        height: auto
+        @include flex
+        position: relative
+        &>div
+            @include flex-item
+        &-icon
+            width: 25px
+            height: 25px
+            max-width: 25px
+            font-size: 0px
+            img
+                height: 100%
+        &-tips
+            text-align: center
+            position: absolute
+            bottom: 0px
+            right: 0px
+            color: $header-color
+            font-size: 1.4rem
+
+._undefined
+    position: fixed
+    top: 0px
+    left: 0px
+    right: 0px
+    bottom: 0px
+    overflow: hidden
+    background-color: #f2f2f2
+    z-index: 10000
+    text-align: center
+    padding-top: 100px
+    display: none
+    &.show
+        display: block
+    .icon
+        font-size: 3.2rem
+    .tips
+        margin-top: 15px
+        font-size: 1.4rem
+    .btn
+        @include mr
+        margin-top: 35px
+        width: 115px
+        height: auto
+        text-align: center
+        padding-top: 10px
+        padding-bottom: 10px
+        font-size: 1.4rem
+        line-height: 1em
+        background-color: $header-color
+        color: #FFFFFF
+

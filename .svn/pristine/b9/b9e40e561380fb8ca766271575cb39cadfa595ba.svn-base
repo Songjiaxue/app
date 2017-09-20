@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no" />
+    <title>我的积分</title>
+    <link rel="stylesheet" href="../../dist/css/api.css">
+    <link rel="stylesheet" href="../../dist/css/icon.css">
+    <link rel="stylesheet" href="../../dist/css/app.css">
+</head>
+<body>
+<div>
+    <div class="login_index">
+        <header>
+            <div class="icon icon-flase"></div>
+        </header>
+        <div class="main">
+            <div class="photo-group">
+                <div class="photo-item">
+                    <img src="../../images/photo.png" />
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="input-item">
+                    <div class="icon icon-personal left"></div>
+                    <div class="left inputText">
+                        <input type="text" placeholder="Seven5589723@163.com">
+                    </div>
+                    <div class="right">
+                        <div class="icon icon-cancel-circled"></div>
+                    </div>
+                </div>
+                <div class="input-item">
+                    <div class="icon icon-lock-filled left"></div>
+                    <div class="left inputText">
+                        <input type="password" value="12345678" />
+                    </div>
+                    <div class="right">
+                        <div class="icon icon-cancel-circled"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">忘记密码？</div>
+            <div class="btn-group">
+                <div class="btn-item">
+                    <div class="btn-red">登录</div>
+                </div>
+                <div class="btn-item">
+                    <div class="btn-white">注册</div>
+                </div>
+            </div>
+            <div class="icon-group">
+                <div class="icon-item">
+                    <div>
+                        <img src="../../images/loginQQ.png" />
+                    </div>
+                </div>
+                <div class="icon-item">
+                    <div>
+                        <img src="../../images/chat.png" />
+                    </div>
+                </div>
+                <div class="icon-item">
+                    <div>
+                        <img src="../../images/weibo.png" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

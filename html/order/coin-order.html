@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no" />
+    <title>确认订单</title>
+    <link rel="stylesheet" href="../../dist/css/api.css">
+    <link rel="stylesheet" href="../../dist/css/icon.css">
+    <link rel="stylesheet" href="../../dist/css/app.css">
+</head>
+<body data-main="coinOrder">
+    <div class="js-container">
+        <div class="_order">
+            <div class="_status"></div>
+            <header>
+                <div class="back icon-lt" data-event="closeWin"></div>
+                <div class="title">
+                    确认订单
+                </div>
+            </header>
+            <div class="main">
+                <div class="address" data-selector="address">
+                    <div class="icon place icon-place"></div>
+                    <div class="beauty-address">
+                        <div class="info">
+                            <div class="nick">
+                                小哲玛利亚小哲玛利亚
+                            </div>
+                            <div class="tel">
+                                +8613082807225
+                            </div>
+                        </div>
+                        <div class="address-info">
+                            详细地址 ： 杭州市西湖区文三路电子信息街区文二路浙江图书大厦1层
+                        </div>
+                    </div>
+                    <div class="icon gt icon-gt"></div>
+                </div>
+                <div class="beauty-info" data-selector="beauty">
+                    <div class="title icon-gt">
+                        <div class="head"></div>
+                        <p>杭州市西湖区文三路电子信</p>
+                    </div>
+                    <div class="context">
+                        <div class="head"></div>
+                        <div class="info">
+                            <div class="info-title">
+                                丽雅美容盛邀女性体验香精提神花式按摩一次含香熏和温室SPA丽雅美容盛邀女性体验香精提神花式按摩一次含香熏和温室SPA
+                            </div>
+                            <div class="info-desc">
+                                组合套装：香薰和温室
+                            </div>
+                            <div class="info-price">
+                                ¥999.99
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="beauty-lists-group">
+                    <div class="beauty-lists-item number">
+                        <div class="title">
+                            购买数量
+                        </div>
+                        <div class="hd">
+                            <label data-selector="change-number" data-params="less">-</label>
+                            <input type="tel" name="number" value="1" data-selector="number" />
+                            <label data-selector="change-number" data-params="add">+</label>
+                        </div>
+                    </div>
+                    <div class="beauty-lists-item number">
+                        <div class="title">
+                            发货方式
+                        </div>
+                        <div class="hd">
+                            前往商家提货
+                        </div>
+                    </div>
+                    <div class="beauty-lists-item other">
+                        <div class="title">
+                            备注
+                        </div>
+                        <div class="hd">
+                            <input type="text" placeholder="选填，可填写您和卖家达成一致的要求" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <div class="result">
+                    合计：<span data-selector="all-price"> ¥999.99 </span>
+                </div>
+                <div class="submit" data-selector="submit">
+                    确认支付
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="../../dist/js/lib/jquery.min.js"></script>
+    <script src="../../dist/js/lib/echo.min.js"></script>
+    <script src="../../dist/js/lib/async.min.js"></script>
+    <script src="../../dist/js/app.js"></script>
+    <script>apiready = $.main;</script>
+</body>
+</html>
+
+
+
+

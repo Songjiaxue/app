@@ -1,0 +1,138 @@
+@import "../common"
+
+._forget
+    &-pwd
+        position: absolute
+        top: 0px
+        left: 0px
+        right: 0px
+        bottom: 0px
+        overflow: hidden
+        background-color: #FFFFFF
+        .header
+            height: 45px
+            background-color: $header-color
+            position: fixed
+            top: 0px
+            left: 0px
+            right: 0px
+            z-index: 10
+            color: #ffffff
+            .icon
+                @include auto_center
+                left: 15px
+                font-size: 2.2rem
+                line-height: 1em
+            .title
+                @include auto_center
+                font-size: 1.6rem
+                text-align: center
+                line-height: 1em
+
+        .main
+            .head-img
+                @include pr
+                height: 45px
+                background-color: #FFFFFF
+                position: relative
+                margin-bottom: 5px
+                border-bottom: 1px solid #e6e7ea
+                .img
+                    @include auto-img
+                    @include auto_center
+                    margin-top: 22.5px
+                    width: 75px
+                    height: 75px
+                    border-radius: 50%
+            .forget
+                border-top: 1px solid #e6e7ea
+                background-color: #FFFFFF
+                @include auto_center
+                width: 100%
+                &-item
+                    color: #e6e7ea
+                    $h: 45px
+                    @include pr
+                    @include flex
+                    height: $h
+                    margin-top: 3px
+                    line-height: $h
+                    font-size: 1.2rem
+                    i,div
+                        @include flex-item
+                        font-size: 1.4rem
+                        position: relative
+                    &.border
+                        border-bottom: 1px solid #e6e7ea
+                    i
+                        display: block
+                        max-width: 25px
+                        min-width: 25px
+                        width: 25px
+                    input
+                        display: block
+                        border: none
+                        background-color: transparent
+                        width: 100%
+                        height: $h
+                        line-height: $h
+                        font-size: 1.4rem
+                    p
+                        text-decoration: underline
+                        margin-right: 15px
+                    .get-verify
+                        position: absolute
+                        top: 50%
+                        right: 15px
+                        transform: translateY(-50%)
+                        color: #FFFFFF
+                        font-size: 1.2rem
+                        line-height: 1.4rem
+                        padding: 5px
+                        background-color: $header-color
+                        border-radius: 3px
+                        &.active
+                            background-color: #cccccc
+                &-btn
+                    .btn
+                        @include mr
+                        max-width: 280px
+                        margin-top: 5px
+                        border-radius: 10px
+                        height: 48px
+                        line-height: 48px
+                        text-align: center
+                        font-size: 1.6rem
+                        &.forgetin
+                            background-color: #e6738e
+                            color: #FFF
+                        &.sign
+                            background-color: #FFFFFF
+                            color: #e6738e
+                &-other
+                    margin-top: 5px
+                    text-align: center
+                    .title
+                        font-size: 1.2rem
+                        color: #cccccc
+                    .content
+                        margin-top: 15px
+                        width: 260px
+                        @include mr
+                        @include flex
+                        & > div
+                            @include flex-item
+                            width: 35px
+                            height: 35px
+                            background-color: $header-color
+                            border-radius: 50%
+                            margin-left: 25px
+                            margin-right: 25px
+            &-tips
+                position: absolute
+                bottom: 20px
+                left: 0px
+                right: 0px
+                font-size: 1.2rem
+                color: #b4b4b4
+                text-align: center

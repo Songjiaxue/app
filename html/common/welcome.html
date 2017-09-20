@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+    <title>美乐吧</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <link rel="stylesheet" href="../../dist/css/api.css" />
+    <link rel="stylesheet" href="../../dist/css/icon.css" />
+    <link rel="stylesheet" href="../../dist/css/app.css" />
+</head>
+<body data-main="welcome">
+    <div class="js-container">
+        <div class="_welcome">
+            <div class="main welcome" data-selector="welcome">
+                <div class='swipe js-slider'>
+                    <div class='swipe-wrap'>
+                        <div style="background-image: url('../../res/load/load1.png')"></div>
+                        <div style="background-image: url('../../res/load/load2.png')"></div>
+                        <div style="background-image: url('../../res/load/load3.png')">
+                            <div class="btn" data-selector="btn">
+                                立即体验
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main advertising" data-selector="advertising">
+                <div class="bg" style="background-image: url('../../res/load/load1.png')" data-selector="bg"></div>
+                <div class="cover" data-selector="cover"></div>
+                <div class="time" data-selector="btn">3</div>
+            </div>
+        </div>
+    </div>
+    <script src="../../dist/js/lib/jquery.min.js"></script>
+    <script src="../../dist/js/lib/swipe.js"></script>
+    <script src="../../dist/js/lib/async.min.js"></script>
+    <script src="../../dist/js/app.js"></script>
+    <script>apiready = $.init;</script>
+</body>
+
+</html>

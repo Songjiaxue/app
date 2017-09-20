@@ -1,0 +1,24 @@
+._nothing
+    position: fixed
+    top: 0px
+    right: 0px
+    bottom: 0px
+    left: 0px
+    overflow: hidden
+    background-image: url("../../res/common/nothing.jpg")
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center top
+    z-index: 1
+._net-error
+    position: fixed
+    top: 0px
+    right: 0px
+    bottom: 0px
+    left: 0px
+    overflow: hidden
+    background-image: url("../../res/common/netwrong.jpg")
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center top
+    z-index: 1

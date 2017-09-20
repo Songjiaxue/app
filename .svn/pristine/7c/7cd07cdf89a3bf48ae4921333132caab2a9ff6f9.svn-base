@@ -1,0 +1,86 @@
+@import "../common"
+/**
+/**  @我的积分支出与收入情况样式
+/**  @入口出于积分商城与个人中心的积分
+/**
+._my-coin
+    .header
+        height: 45px
+        background-color: $header-color
+        position: fixed
+        top: 0px
+        left: 0px
+        right: 0px
+        z-index: 10
+        color: #ffffff
+        .icon
+            @include auto_center
+            left: 15px
+            font-size: 2.2rem
+            line-height: 1em
+        .title
+            @include auto_center
+            font-size: 1.6rem
+            text-align: center
+            line-height: 1em
+
+    .nav
+        height: 40px
+        overflow: hidden
+        background-color: #ffffff
+        position: fixed
+        top: 45px
+        left: 0px
+        right: 0
+        z-index: 10
+        &-in
+            border-bottom: 1px solid #d6d7dc
+        &-group,&-in,&-item
+            height: 39px
+            overflow: hidden
+        &-group
+            @include flex
+        &-item
+            @include flex-item
+            box-shadow: 1px 0px 0px 0px #ededed
+            font-size: 1.6rem
+            position: relative
+            p
+                @include auto_center
+        &-bar
+            width: 50%
+            height: 1px
+            position: absolute
+            left: 0%
+            bottom: 0px
+            background-color: $header-color
+            transition: left 0.3s
+            -webkit-transition: left 0.3s
+    .main
+        overflow: hidden
+        .lists
+            background-color: #ffffff
+            &-group
+            &-item
+                @include clearfix
+                @include pr
+                border-bottom: 1px solid #d6d7dc
+                height: 35px
+                line-height: 35px
+                .case
+                    @include font-over
+                    font-size: 1.6rem
+                    float: left
+                    color: #333333
+                    max-width: 120px
+                .time
+                    font-size: 1.2rem
+                    float: left
+                    color: #808080
+                    margin-left: 10px
+                .coin
+                    float: right
+                    font-size: 1.4rem
+                    color: #333333
+
+

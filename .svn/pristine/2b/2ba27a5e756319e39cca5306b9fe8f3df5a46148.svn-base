@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no" />
+    <title>全部评论</title>
+    <link rel="stylesheet" href="../../dist/css/api.css" />
+    <link rel="stylesheet" href="../../dist/css/icon.css" />
+    <link rel="stylesheet" href="../../dist/css/app.css" />
+</head>
+<body data-main="coinAssess">
+    <div class="js-container">
+        <div class="_coin-assess">
+            <div class="header">
+                <div class="icon icon-lt" data-event="closeWin"></div>
+                <div class="title">
+                    全部评论
+                </div>
+            </div>
+            <div class="nav">
+                <div class="nav-in">
+                    <div class="nav-item active" data-selector="nav-item">
+                        全部
+                    </div>
+                    <div class="nav-item" data-selector="nav-item">
+                        好评
+                    </div>
+                    <div class="nav-item" data-selector="nav-item">
+                        中评
+                    </div>
+                    <div class="nav-item" data-selector="nav-item">
+                        差评
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../dist/js/lib/jquery.min.js"></script>
+    <script src="../../dist/js/lib/async.min.js"></script>
+    <script src="../../dist/js/lib/swipe.js"></script>
+    <script src="../../dist/js/lib/echo.min.js"></script>
+    <script src="../../dist/js/app.js"></script>
+    <script>apiready = $.init;</script>
+</body>
+</html>
+
+
+
+
