@@ -1,0 +1,171 @@
+;~function () {
+
+    var app = function () {
+        this.nav = $('.nav-item');
+        this.navGroup = $('[data-selector="nav"]');
+        this.title = $('[data-selector="title"]');
+        //数据加载的选择器
+        this._up_nav = $('[data-selector="up-nav-group"]');
+        this.my_up_nav = $('[data-selector="my-up-nav-group"]');
+        this.$url = 'bbs/Article/column';
+        this.bbsPageGroup;
+        //内容选择器
+        this.officialContext = $('[data-selector="official-context"]');
+        this.page = 1;
+        this.size = 10;
+        this.load = $('._load');
+        this.loading = $('._loading');
+        this._undefined = $('._undefined');
+        //details
+        this.detailsContext = $('[data-selector="details-context"]');
+        this.assessContext = $('[data-selector="assess-context"]');
+        //执行
+    };
+    app.prototype.init = function () {
+        var self = this;
+        /*async.waterfall([
+            function ( cb ) {
+                self.ajax( cb );
+            },
+            function ( ret , cb ) {
+                self.resetBbsPageGroup(ret,cb);
+            },
+            function (ret , cb) {
+                self.appendColumn( ret , cb);
+            }
+        ],function (err , ret) {
+            self.switchNav();
+            self.resetNav();
+        });*/
+    };
+    /**
+     * todo : 获取热点分类
+     * desc : 数据请求失败时，使用本地缓存 *default 全部 id : 0
+     * @param callback
+     */
+    app.prototype.ajax = function (callback) {
+        var self = this;
+        callback = typeof callback == 'function' ? callback : function () {};
+        $.ajax({
+            url : self.$url
+        }).then(function (err,ret) {
+            if(err) return callback(null, self._get_cache() );
+            self._cache( ret );
+            callback(err,ret);
+        });
+    };
+    app.prototype.columnHtml = function (db) {
+        var html = '';
+        db.forEach(function (item , i) {
+            if(i == 0) {
+                html += '<div class="nav-item active" data-event="bbsSwitchGroup" data-params="';
+            }else{
+                html += '<div class="nav-item" data-event="bbsSwitchGroup" data-params="';
+            };
+            html += i;
+            html += '">';
+            html += item.name;
+            html += '</div>';
+        });
+        return html;
+    };
+    app.prototype.appendColumn =function (db , cb) {
+        var self = this;
+        self._up_nav.html( self.columnHtml(db) );
+        cb(null);
+    };
+
+    app.prototype.set_bbs_page_group = function (argument) {
+        var frames = [];
+        // 热点窗口组内容
+        argument['info'].forEach(function (item , i) {
+            frames.push({
+                name : 'frame-bbs-official-' + i,
+                url  : 'widget://html/bbs/bbs-official.html',
+                pageParam:{
+                    id : item.id
+                },
+                bounces : true,
+                bgColor : '#ededed',
+                vScrollBarEnabled : false,
+                hScrollBarEnabled : false,
+                customRefreshHeader : 'UIPullRefresh'
+            });
+        });
+        // 姐妹说窗口组
+        [1,2,3,4].forEach(function (item,i) {
+            frames.push({
+                name : 'frame-bbs-other-' + i,
+                url  : 'widget://html/bbs/bbs-other.html',
+                pageParam:{
+                    id : i
+                },
+                bounces : true,
+                bgColor : '#ededed',
+                vScrollBarEnabled : false,
+                hScrollBarEnabled : false,
+                customRefreshHeader : 'UIPullRefresh'
+            });
+        });
+        return frames;
+    };
+    app.prototype.resetNav = function () {
+        var self = this;
+        //重设姐妹说
+        self.title.eq(1).data('params', self.bbsPageGroup.length - 4 );
+        //重设姐妹说内容
+        var item = self.my_up_nav.find('.nav-item');
+        for (var i = 0 ; i < item.length; i++){
+            item.eq(i).data('params' , self.bbsPageGroup.length - 4 + i );
+        };
+        self.nav = $('.nav-item');
+    };
+    app.prototype.switchNav = function () {
+        var self = this;
+        $.api.listenerEvent('bbsSwitchNav' , function (ret) {
+            self.switchNavItem(ret.index);
+        });
+    };
+    app.prototype.switchNavItem = function (i) {
+        var self = this;
+        var navNum = self.navGroup.eq(0).find('.nav-item').length;
+        self.nav.removeClass('active').eq(i).addClass('active');
+        self.navGroup.removeClass('show');
+        self.title.removeClass('active');
+        i = Math.floor(i / navNum);
+        self.navGroup.eq(i).addClass('show');
+        self.title.eq(i).addClass('active');
+    };
+    app.prototype.sendEvent = function (i) {
+        var self = this;
+        $.api.sendEvent('bbsSwitchGroup' ,{
+            index : i
+        });
+    };
+    /**
+     * todo : 请求分类成功后，缓存数据到本地，供下次使用
+     * desc : key = homeBbs
+     * @param ret
+     * @private
+     */
+    app.prototype._cache = function (ret) {
+        localStorage.homeBBs = JSON.stringify(ret);
+    };
+    /**
+     * todo : 设置
+     * @private
+     */
+    app.prototype._get_cache = function () {
+        if( typeof localStorage.homeBBs == typeof void 0 ) localStorage.homeBBs = JSON.stringify(
+            {
+                info:[
+                    {id : 0,name:'全部'}
+                ]
+            }
+        );
+        return JSON.parse(localStorage.homeBBs);
+    };
+   /* $.homeBbs = function () {
+        return new app();
+    };*/
+}();

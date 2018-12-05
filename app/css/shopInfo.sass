@@ -1,0 +1,279 @@
+@import "common"
+//shopInfo页面样式
+.shopInfo
+    header
+        height: 45px
+        background-color: #e5738e
+        color: #FFFFFF
+        font-size: 1.8rem
+        line-height: 45px
+        ul
+            @include flex
+            @include pr
+            height: 45px
+            .index-left
+                width: 30px
+                text-align: left
+                .icon
+                    font-size: 2.2rem
+            .index-right
+                @include flex-item
+                margin-left: -30px
+                text-align: center
+    .bg-group
+        width: 100%
+        position: relative
+        .bg-gray
+            background-color: rgba(0,0,0,0.4)
+            z-index: 3
+            position: absolute
+            right: 0
+            left: 0
+            bottom: 0
+            top: 0
+        .bg-favorite
+            z-index: 5
+            width: 85px
+            height: 24px
+            border-radius: 5px
+            background-color: rgba(255,255,255,0.7)
+            line-height: 24px
+            text-align: center
+            position: absolute
+            right: 10px
+            bottom: 5px
+            font-size: 1rem
+            color: #e6738e
+            .icon
+                color: #e65a7b
+                font-size: 2rem
+            div
+                float: left
+    nav
+        background-color: #FFFFFF
+        height: 48px
+        ul
+            @include flex
+            height: 48px
+            li
+                @include flex-item
+                height: 41px
+                padding: 3px 0
+                color: #808080
+                font-size: 1rem
+                text-align: center
+                .icon
+                    font-size: 2rem
+                    color: #999999
+            .active
+                border-bottom: 1px solid #e56683
+//shopInfo-index页面样式
+.shopInfo-index
+    img
+        width: 100%
+        display: block
+    .list-group
+        .list-item
+            &-banner
+                position: relative
+                .banner-bg
+                    width: 100%
+                .banner-label-king,.banner-label-hot
+                    position: absolute
+                    width: 94px
+                    height: 94px
+                    right: 0px
+                    top: 0px
+                    z-index: 3
+                .banner-label-king
+                    background: url("../../images/shopInfo-business-hot1.png") no-repeat right top
+                    background-size: cover
+                .banner-label-hot
+                    background: url("../../images/shopInfo-business-hot2.png") no-repeat right top
+                    background-size: cover
+            &-adv
+                margin: 8px 0
+                @include flex
+                @include pr
+                .adv-item
+                    @include flex-item
+                .adv-item:first-child
+                    margin-right: 15px
+            &-info
+                height: 27px
+                background-color: #FFFFFF
+                @include clearfix
+                line-height: 27px
+                @include pr
+                margin-bottom: 16px
+                .info-left
+                    float: left
+                    font-size: 1.2rem
+                    color: #4c4c4c
+                    @include font-over
+                .info-right
+                    float: right
+                    font-size: 1rem
+                    color: #808080
+                    div
+                        float: left
+                    .icon
+                        font-size: 1rem
+                    .icon:last-child
+                        margin-left: -8px
+    .project-group
+        background-color: #FFFFFF
+        padding: 5px 10px
+        margin-bottom: 10px
+        .project-item
+            margin-bottom: 15px
+            @include flex
+            &-left,&-right
+                @include flex-item
+            &-right
+                text-align: center
+                position: relative
+                &-wrap
+                    @include auto_center
+                    width: 100%
+                    font-size: 1.2rem
+                    img
+                        width: 45px
+                        display: inline-block
+                    .center
+                        color: #808080
+                        margin: 10px 0
+                    .bottom
+                        color: #e65c7c
+        .project-item:last-child
+            margin-bottom: 0px
+    .project-info
+        height: 27px
+        background-color: #FFFFFF
+        @include clearfix
+        line-height: 27px
+        @include pr
+        .project-left
+            float: left
+            font-size: 1.2rem
+            color: #4c4c4c
+            @include font-over
+        .project-right
+            float: right
+            font-size: 1rem
+            color: #808080
+            div
+                float: left
+            .icon:last-child
+                margin-left: -8px
+
+//service页面样式
+.service
+    img
+        width: 100%
+        display: block
+    @include pr
+    .list-group
+        @include flex
+        flex-wrap: wrap
+        -webkit-flex-wrap: wrap
+        .list-item
+            width: 50%
+            max-width: 235px
+            float: left
+            background-color: #FFFFFF
+            border: 5px solid transparent
+            border-bottom: 1px solid #d6d7dc
+            box-sizing: border-box
+            -webkit-box-sizing: border-box
+            padding: 5px 0
+            &-top
+                color: #4c4c4c
+                font-size: 1rem
+                margin: 5px 0
+            &-center
+                color: #666666
+                margin: 5px 0
+                font-size: 1rem
+                .red
+                    color: #e65c7c
+                    font-size: 1.2rem
+            &-bottom
+                color: #808080
+                font-size: 1rem
+                margin: 5px 0
+//benefit页面样式
+.benefit
+    img
+        width: 100%
+        display: block
+    .list-group
+        @include pr
+        .list-item
+            @include pr
+            @include clearfix
+            background-color: #FFFFFF
+            color: #4c4c4c
+            font-size: 1rem
+            border-bottom: 1px solid #d6d7dc
+            margin-bottom: 5px
+            &-top
+                font-size: 1.2rem
+                margin: 5px 0
+            &-img
+                margin: 5px 0
+            &-bottom
+                float: right
+                color: #1a1a1a
+                margin: 5px 0
+
+//business页面样式
+.business
+    img
+        width: 100%
+        display: block
+    .list-group
+        .list-item
+            background-color: #FFFFFF
+            margin-bottom: 5px
+            &-nav
+                color: #333333
+                font-size: 1.2rem
+                line-height: 27px
+                @include pr
+            &-content
+                @include clearfix
+                border-bottom: 1px solid #d6d7dc
+                border-top: 1px solid #d6d7dc
+                padding: 10px
+            &-call
+                color: #808080
+                font-size: 1rem
+                line-height: 2rem
+                @include clearfix
+                .call-left,.call-right
+                    float: left
+                .call-left
+                    margin-right: 24px
+                .call-right
+                    color: #e65c7c
+                    @include clearfix
+                    div
+                        float: left
+                        font-size: 0.8rem
+                    .icon:last-child
+                        margin-left: -6px
+            &-intro
+                color: #808080
+                font-size: 1rem
+                line-height: 1.2rem
+            &-more
+                color: #333333
+            &-wrap
+                @include flex
+                .item-img
+                    @include flex-item
+                    border: 1px solid #d4d7dc
+                .item-img:nth-child(2n)
+                    margin: 0 5px
+

@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no" />
+    <title>性别设置</title>
+    <link rel="stylesheet" href="../../dist/css/api.css" />
+    <link rel="stylesheet" href="../../dist/css/icon.css" />
+    <link rel="stylesheet" href="../../dist/css/weui.css" />
+    <link rel="stylesheet" href="../../dist/css/app.css" />
+</head>
+<body data-main="setSex">
+    <div class="js-container">
+        <div class="_set-user">
+            <div class="_status"></div>
+            <header>
+                <div class="back fa fa-angle-left fa-3x" aria-hidden="true" data-event="closeWin"></div>
+                <div class="title">
+                    选择性别
+                </div>
+            </header>
+            <div class="main">
+                <div class="item-wrap">
+                    <div class="item-group">
+                        <div class="item icon-gt"  data-selector="sex" data-sex="1">
+                            <div class="title">
+                                男
+                            </div>
+                        </div>
+                        <div class="item icon-gt"  data-selector="sex" data-sex="2">
+                            <div class="title">
+                                女
+                            </div>
+                        </div>
+                        <div class="item icon-gt"  data-selector="sex" data-sex="0">
+                            <div class="title">
+                                保密
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="_toast">
+            <!-- 操作完成提示 -->
+            <div id="success" class="success">
+                <div class="weui-mask_transparent"></div>
+                <div class="weui-toast">
+                    <i class="weui-icon-success-no-circle weui-icon_toast"></i>
+                    <p class="weui-toast__content">操作成功</p>
+                </div>
+            </div>
+            <!-- 操作中提示 -->
+            <div id="load">
+                <div class="weui-mask_transparent"></div>
+                <div class="weui-toast">
+                    <i class="weui-loading weui-icon_toast"></i>
+                    <p class="weui-toast__content">数据加载中</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../dist/js/lib/jquery.min.js"></script>
+    <script src="../../dist/js/lib/async.min.js"></script>
+    <script src="../../dist/js/app.js"></script>
+    <script>apiready = $.main;</script>
+</body>
+</html>
+
+
+
+

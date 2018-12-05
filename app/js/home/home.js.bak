@@ -1,0 +1,256 @@
+/**
+ * @root窗口操作事件
+ * @ 1. 在切换热点时，发送事件 'bbsSwitchNav' , param = ret.index
+ * @ 2. 监听了切换事件 'bbsSwitchGroup'  param = ret.index
+ *
+ *
+ *
+ *
+ * */
+
+
+
+
+
+;(function () {
+    var app = function () {
+        this.foot = $('footer').find('.footer-item');
+        this.bbs = true;      //判断当前bbs页面 默认为true == bbsIndex
+        this.bbsPageGroup = [
+            /*{
+                name: 'bbs-1',
+                url: 'widget://html/bbs/index.html',
+                bounces: false,
+                bgColor : '#f2f2f2',
+                vScrollBarEnabled: false,
+                hScrollBarEnabled: false,
+                pageParam :{
+                    id : ''
+                }
+            },{
+                name: 'bbs-2',
+                url: 'widget://html/bbs/index.html',
+                bounces: false,
+                bgColor : '#f2f2f2',
+                vScrollBarEnabled: false,
+                hScrollBarEnabled: false
+            },{
+                name: 'bbs-3',
+                url: 'widget://html/bbs/index.html',
+                bounces: false,
+                bgColor : '#f2f2f2',
+                vScrollBarEnabled: false,
+                hScrollBarEnabled: false
+            },{
+                name: 'bbs-4',
+                url: 'widget://html/bbs/index.html',
+                bounces: false,
+                bgColor : '#f2f2f2',
+                vScrollBarEnabled: false,
+                hScrollBarEnabled: false
+            },{
+                name: 'bbs-5',
+                url: 'widget://html/bbs/index.html',
+                bounces: false,
+                bgColor : '#f2f2f2',
+                vScrollBarEnabled: false,
+                hScrollBarEnabled: false
+            },{
+                name: 'bbs-6',
+                url: 'widget://html/bbs/published.html',
+                bounces: false,
+                bgColor : '#f2f2f2',
+                vScrollBarEnabled: false,
+                hScrollBarEnabled: false
+            },{
+                name: 'bbs-7',
+                url: 'widget://html/bbs/published.html',
+                bounces: false,
+                bgColor : '#f2f2f2',
+                vScrollBarEnabled: false,
+                hScrollBarEnabled: false
+            },{
+                name: 'bbs-8',
+                url: 'widget://html/bbs/published.html',
+                bounces: false,
+                bgColor : '#f2f2f2',
+                vScrollBarEnabled: false,
+                hScrollBarEnabled: false
+            }*/
+        ];
+    };
+    app.prototype.init = function () {
+        var self = this;
+        self.openFrameGroup();
+        self.listenerFoot();
+        self.listenerHeaderSwitchEvent();
+        //监听bbs页面变化
+        self.changeBbsPageGroup();
+    };
+
+    /**
+     * @监听脚部事件
+     */
+    app.prototype.listenerFoot = function () {
+        var self = this;
+        self.foot.on('click' , function () {
+            self.switchFoot($(this));
+        });
+    };
+    /**
+     * @打开首页窗口组
+     */
+    app.prototype.openFrameGroup = function () {
+        api.openFrameGroup ({
+            name: 'homeGroup',
+            scrollEnabled: false,
+            preload : 4,
+            index : 0,
+            rect: {
+                marginLeft : 0 ,
+                marginRight : 0,
+                marginTop : $.api.statusSize(),
+                marginBottom : 45,
+            },
+            frames: [{
+                name: 'home-index',
+                url: 'widget://html/home-index.html',
+                bounces: false,
+                bgColor : '#ededed',
+                vScrollBarEnabled: false,
+                hScrollBarEnabled: false
+            },{
+                name: 'coin-index',
+                url: 'widget://html/home-coin.html',
+                bounces: false,
+                bgColor : '#ededed',
+                vScrollBarEnabled: false,
+                hScrollBarEnabled: false
+            },{
+                name: 'beauty-index',
+                url: 'widget://html/home-beauty.html',
+                bounces: false,
+                bgColor : '#ededed',
+                vScrollBarEnabled: false,
+                hScrollBarEnabled: false
+            },{
+                name: 'bbs-index',
+                url: 'widget://html/home-bbs.html',
+                bounces: false,
+                bgColor : '#ededed',
+                vScrollBarEnabled: false,
+                hScrollBarEnabled: false
+            },{
+                name: 'user-index',
+                url: 'widget://html/home-user.html',
+                bounces: false,
+                bgColor : '#ededed',
+                vScrollBarEnabled: false,
+                hScrollBarEnabled: false
+            }]
+        });
+    };
+    /**
+     * @切换脚部样式
+     * */
+    app.prototype.switchFoot = function ($this) {
+        var self = this,
+            $i = $this.index();
+        //切换颜色
+        $this.addClass('active').siblings().removeClass('active');
+        //切换图标
+        var $icon = $this.find('.icon');
+        $.each( self.foot.find('.icon') ,function (i , ic) {
+            $(ic).attr('class' , 'icon ' + $(ic).data('icon') );
+        });
+        $icon.attr('class' , 'icon ' + $icon.data('active-icon'));
+        //更改窗口
+        $.api.switchPageIndex( 'homeGroup' , $i);
+
+
+        $.api.hidePageGroup('bbsGroup');
+        api.setFrameAttr({
+            name : 'frame-coin-index',
+            hidden : true
+        });
+        api.setFrameAttr({
+            name : 'frame-beauty-index',
+            hidden : true
+        });
+        if($i == 3) self.openBbsGroup();
+        if($i == 1) self.openCoinIndex();
+        if($i == 2) self.openBeautyIndex();
+    };
+    app.prototype.openCoinIndex = function () {
+        var self = this;
+        api.openFrame({
+            name: 'frame-coin-index',
+            url: 'widget://html/coin/coin-index.html',
+            rect: {
+                marginLeft : 0 ,
+                marginRight : 0,
+                marginTop : 45 + $.api.statusSize(),
+                marginBottom : 45,
+            },
+            bounces: false,
+            bgColor: '#ededed',
+            vScrollBarEnabled: false,
+            hScrollBarEnabled: false
+        });
+    };
+    app.prototype.openBeautyIndex = function () {
+        var self = this;
+        api.openFrame({
+            name: 'frame-beauty-index',
+            url: 'widget://html/beauty/beauty-index.html',
+            rect: {
+                marginLeft : 0 ,
+                marginRight : 0,
+                marginTop : 80 + $.api.statusSize(),
+                marginBottom : 45,
+            },
+            bgColor: '#ededed',
+            vScrollBarEnabled: false,
+            hScrollBarEnabled: false
+        });
+    };
+    /**
+     * @热点组
+     * */
+    app.prototype.openBbsGroup = function () {
+        var self = this;
+        api.openFrameGroup ({
+            name: 'bbsGroup',
+            scrollEnabled: true,
+            index : 0,
+            rect: {
+                marginLeft : 0 ,
+                marginRight : 0,
+                marginTop : $.api.statusSize() + 89,
+                marginBottom : 45,
+            },
+            frames: self.bbsPageGroup
+        },function ( ret , err) {
+            $.api.sendEvent('bbsSwitchNav',{
+                index : ret.index
+            });
+        });
+    };
+    /**
+     * @监听热点切换事件
+     * */
+    app.prototype.listenerHeaderSwitchEvent = function () {
+        $.api.listenerEvent('bbsSwitchGroup' , function (ret) {
+            $.api.switchPageIndex('bbsGroup' , ret.index , true);
+        });
+    };
+    app.prototype.changeBbsPageGroup = function () {
+        var self = this;
+        $.api.listenerEvent('changeBbsPageGroup' , function (ret) {
+            self.bbsPageGroup =  ret.pageGroup;
+        });
+    };
+    $.home = function () {
+        return new app();
+    };
+}());

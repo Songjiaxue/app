@@ -1,0 +1,554 @@
+@import '../common'
+
+/** 主页的主页 **/
+
+._home_bbs
+    header
+        background-color: #FFFFFF
+        height: 48px
+        line-height: 48px
+        border-bottom: 2px solid #bfbfbf
+        .head-group
+            @include flex
+            .head-item
+                @include flex_item
+                text-align: center
+                font-size: 1.8rem
+                color: #666666
+                &.active
+                    border-bottom: 2px solid #e65c7c
+    nav
+        background-color: #ffffff
+        display: none
+        &.show
+            display: block
+        height: 40px
+        overflow: hidden
+        &.index
+            @include pr
+            .nav
+                &-warp,&-group
+                    height: 40px
+                    line-height: 40px
+                &-group
+                    @include clearfix
+                &-item
+                    float: left
+                    margin-right: 15px
+                    font-size: 1.4rem
+                    &.active
+                        color: #e6738e
+        &.personal
+            position: relative
+            .nav
+                &-warp
+                    @include auto_center
+                    height: 18px
+                    position: relative
+                &-group
+                    @include clearfix
+                    height: 18px
+                    line-height: 18px
+                &-item
+                    float: left
+                    @include pr
+                    box-shadow: -1px 0px 0px 0px #ccc
+                    font-size: 1.4rem
+                    &.active
+                        color: #e6738e
+    .main.official
+        margin-bottom: 5px
+        .lists
+            &-item
+                overflow: hidden
+                margin-top: 5px
+                background-color: #ffffff
+                padding-bottom: 10px
+            &-head
+                @include clearfix
+                height: 40px
+                line-height: 40px
+                padding: 6px 10px
+                font-size: 0px
+                .head
+                    @include auto-img
+                    float: left
+                    height: 30px
+                    width: 30px
+                    max-width: 30px
+                    min-width: 30px
+                    overflow: hidden
+                    margin-top: 5px
+                    border-radius: 50%
+                .nickname
+                    float: left
+                    margin-left: 8px
+                    font-size: 1.4rem
+                    line-height: 40px
+            &-img
+                @include auto-img
+                width: 100%
+                height: 160px
+                min-height: 160px
+                max-height: 160px
+                overflow: hidden
+            &-desc
+                @include pr
+                @include text-over(3)
+                font-size: 1.2rem
+                padding-top: 8px
+            &-tools
+                @include pr
+                @include clearfix
+                padding-bottom: 5px
+                padding-top: 13px
+                height: 20px
+                line-height: 20px
+                font-size: 1.2rem
+                overflow: hidden
+                color: #808080
+                border-bottom: 1px dotted #dbdbdb
+                .icon
+                    color: #666666
+                    font-size: 1.8rem
+                .ml15
+                    margin-left: 20px
+                .tools
+                    &-group
+                        @include clearfix
+                        float: left
+                        &:last-child
+                            float: right
+                    &-item
+                        @include clearfix
+                        float: left
+
+                        &>div
+                            float: left
+            &-review
+                @include pr
+                margin-top: 10px
+                overflow: hidden
+                .review
+                    &-warp
+                        @include flex
+                        font-size: 1.2rem
+                        color: #666666
+                    &-icon
+                        min-width: 25px
+                        width: 25px
+                        max-width: 25px
+                        font-size: 2.4rem
+                        text-align: center
+                    &-context
+                        margin-left: 8px
+                        margin-top: 12px
+                    &-item
+                        @include text-over(1)
+                        margin-bottom: 9px
+                        font-size: 1.2rem
+                        line-height: 1em
+                        height: 12px
+                        overflow: hidden
+                        padding-right: 15px
+                    &-item:last-child
+                        color: #1a1a1a
+    .main.other
+        margin-bottom: 5px
+        .list-group
+            .list-item
+                background-color: #ffffff
+                margin-top: 5px
+                overflow: hidden
+                color: #333333
+                &-head
+                    height: 40px
+                    color: #000000
+                    border-bottom: 1px solid #d6d7dc
+                    @include pr
+                    div
+                        float: left
+                    .head-left
+                        @include auto-img
+                        border-radius: 50%
+                        height: 30px
+                        width: 30px
+                        margin-top: 5px
+                        margin-bottom: 5px
+                    .head-right
+                        font-size: 1.4rem
+                        margin: 0 10px
+                        line-height: 40px
+                        @include font-over
+                &-content
+                    .content-top
+                        @include pr(40px)
+                        padding-top: 5px
+                        @include text-over(3)
+                        font-size: 1.2rem
+                        color: #666666
+                    .content-center
+                        @include auto-img
+                        margin-left: 40px
+                        margin-top: 5px
+                        width: 210px
+                        height: 105px
+                        overflow: hidden
+                    .content-bottom
+                        @include clearfix
+                        padding: 5px 10px 5px 38px
+                        &-left
+                            float: left
+                            color: #4c4c4c
+                            font-size: 1.2rem
+                        &-right
+                            @include clearfix
+                            float: right
+                            line-height: 16px
+                            div
+                                float: left
+                                margin: 0 2px
+                            .icon
+                                font-size: 1.8rem
+                                color: #666666
+                                margin-left: 10px
+                            .red
+                                color: #e6738e
+                            .text
+                                color: #333333
+                                font-size: 1.2rem
+    //加载更多
+    ._load.more
+        text-align: center
+        font-size: 1.4rem
+        line-height: 1.4em
+        height: 16px
+        overflow: hidden
+        padding-top: 12px
+        padding-bottom: 12px
+        background-color: #FFFFFF
+        i
+            width: 14px
+            height: 16px
+            overflow: hidden
+
+    .main.details
+        .header
+            height: 45px
+            background-color: $header-color
+            position: fixed
+            top: 20px
+            left: 0px
+            right: 0px
+            z-index: 10
+            color: #ffffff
+            .icon
+                @include auto_center
+                left: 15px
+                font-size: 2.2rem
+                line-height: 1em
+            .title
+                @include auto_center
+                font-size: 1.6rem
+                text-align: center
+                line-height: 1em
+        .details-context
+            padding-top: 65px
+            .details
+                background-color: #FFFFFF
+                &-title
+                    height: 40px
+                    color: #000000
+                    border-bottom: 1px solid #d6d7dc
+                    background-color: #FFFFFF
+                    @include pr
+                    div
+                        float: left
+                    .head
+                        @include auto-img
+                        border-radius: 50%
+                        height: 30px
+                        width: 30px
+                        margin-top: 5px
+                        margin-bottom: 5px
+                        margin-right: 10px
+                    .nickname
+                        font-size: 1.4rem
+                        line-height: 40px
+                        @include font-over
+                &-desc
+                    @include pr
+                    padding-top: 5px
+                    padding-bottom: 5px
+                    font-size: 1.2rem
+                    color: #333333
+                    line-height: 1.6rem
+                    background-color: #FFFFFF
+                &-author
+                    @include clearfix
+                    padding: 10px
+                    background-color: #FFFFFF
+                    color: #8c8c8c
+                    font-size: 1.2rem
+                    line-height: 1.4rem
+                    margin-right: 5px
+                    &>div
+                        float: left
+                        margin-right: 10px
+                &-img
+                    background-color: #FFFFFF
+                    position: relative
+                    overflow: hidden
+                    &.pr
+                        padding: 10px
+                        font-size: 1.2rem
+                    .img
+                        &-item
+                            height: 200px
+                            @include auto-img
+                        &-more
+                            position: absolute
+                            left: 0px
+                            right: 0px
+                            bottom: 0px
+                            height: 35px
+                            background-color: rgba(0,0,0,.35)
+                            text-align: center
+                            line-height: 35px
+                            color: #FFFFFF
+                            font-size: 1.4rem
+                &-tools
+                    background-color: #FFFFFF
+                    padding-bottom: 5px
+                    &-in
+                        padding-top: 5px
+                        padding-bottom: 5px
+                        @include clearfix
+                        @include pr
+                        border-bottom: 1px dotted #cccccc
+                        line-height: 1.4em
+                    &-left
+                        @include clearfix
+                        float: left
+                        font-size: 1.2rem
+                    &-right
+                        @include clearfix
+                        float: right
+                    &-time,&-report
+                        float: left
+                        margin-right: 10px
+                    &-share,&-love
+                        float: right
+                        margin-left: 10px
+                        font-size: 1.2rem
+                        span
+                            font-size: 1.2rem
+                            color: #e65c7c
+                    &-love
+                        @include clearfix
+                        i,span
+                            display: block
+                            float: left
+        /* 评论 */
+        .details-assess
+            margin-top: 20px
+            padding-bottom: 35px
+            &-group
+            &-no
+                @include pr
+                background-color: #FFFFFF
+                background-image: url("../../images/no_assess.png")
+                background-repeat: no-repeat
+                background-size: 135px
+                min-height: 180px
+                background-position: center
+            &-item
+                background-color: #FFFFFF
+                margin-bottom: 5px
+                .assess
+                    &-title
+                        position: relative
+                        height: 40px
+                        color: #000000
+                        border-bottom: 1px solid #d6d7dc
+                        @include pr
+                        div
+                            float: left
+                        .head
+                            @include auto-img
+                            border-radius: 50%
+                            height: 24px
+                            width: 24px
+                            margin-top: 8px
+                            margin-bottom: 8px
+                        .nickname
+                            font-size: 1.2rem
+                            margin: 0 10px
+                            line-height: 40px
+                            @include font-over
+                        .report
+                            position: absolute
+                            top: 50%
+                            right: 10px
+                            transform: translateY(-50%)
+                            -webkit-transform: translateY(-50%)
+                            color: #cccccc
+                    &-desc
+                        @include pr
+                        font-size: 1.2rem
+                        color: #333333
+                        padding-top: 5px
+                        padding-bottom: 5px
+                        img
+                            display: inline
+                            max-width: 12px
+                            height: auto
+                            margin-left: 1px
+                            margin-right: 1px
+                    &-time
+                        @include pr
+                        padding-top: 2px
+                        padding-bottom: 7px
+                        color: #808080
+
+        //评论
+        .footer
+            height: 34px
+            position: fixed
+            bottom: 0px
+            left: 0px
+            right: 0px
+            border-top: 1px solid #cccccc
+            background-color: #FFFFFF
+            &-in
+                padding: 5px
+                overflow: hidden
+                @include flex
+                &>div
+                    @include flex-item
+                    border-radius: 3px
+                    font-size: 1.4rem
+                    line-height: 1.4rem
+                    padding-top: 5px
+                    padding-bottom: 5px
+                .text
+                    background-color: #f2f2f2
+                    text-indent: 10px
+                    &:before
+                        margin-right: 5px
+                .share
+                    max-width: 75px
+                    margin-left: 10px
+                    text-align: center
+                    background-color: $header-color
+                    color: #FFFFFF
+
+        .details-edit
+            font-size: 1.4rem
+            display: none
+            &.show
+                display: block
+            .edit
+                &-wrap
+                    position: fixed
+                    top: 45px
+                    left: 0px
+                    right: 0px
+                    bottom: 0px
+                    overflow: hidden
+                    background-color: rgba(0,0,0,.75)
+                    z-index: 1000
+                &-context
+                    position: fixed
+                    top: 45px
+                    right: 0px
+                    left: 0px
+                    overflow: hidden
+                    z-index: 1001
+                    background-color: #FFFFFF
+                &-in
+                    padding: 20px
+                    .title
+                        $h : 30px
+                        @include clearfix
+                        height: $h
+                        width: auto
+                        line-height: $h
+                        .btn
+                            @include pr(5px)
+                            background-color: #FFFFFF
+                            width: auto
+                            height: $h
+                            float: left
+                            border-radius: 5px
+                            &.send
+                                @include pr(15px)
+                                float: right
+                                background-color: $header-color
+                                color: #FFFFFF
+                    .context
+                        color: #000
+                        margin-top: 5px
+                        padding: 10px
+                        border: 1px solid #cccccc
+                        border-radius: 5px
+                        position: relative
+                        textarea
+                            display: block
+                            resize: none
+                            width: 100%
+                            min-height: 150px
+                            line-height: 1.6em
+                        .smile
+                            position: absolute
+                            bottom: 5px
+                            right: 10px
+                            font-size: 2.0rem
+                            color: #cccccc
+
+    .main.review
+        font-size: 1.2rem
+        color: #000000
+        .main-item
+            margin-top: 5px
+
+            .head
+                margin-bottom: 1px
+                background-color: #FFFFFF
+                position: relative
+                @include pr
+                &-avatar
+                    @include auto-img
+                    position: absolute
+                    top: 50%
+                    left: 10px
+                    transform: translateY(-50%)
+                    -webkit-transform: translateY(-50%)
+                    border-radius: 50%
+                    height: 30px
+                    width: 30px
+                &-name
+                    line-height: 45px
+                    margin-left: 40px
+                    @include text-over(1)
+            .content
+                padding: 5px 50px
+                background-color: #FFFFFF
+                &-link
+                    &-in
+                        @include text-over(2)
+                    background-color: #f2f2f2
+                    padding: 10px
+                    margin: 10px 0
+                    color: #666666
+                &-time
+                    color: #4c4c4c
+                &-tool
+                    @include flex
+                    &-item
+                        @include flex-item
+                        &:last-child
+                            text-align: right
+                            &:before
+                                color: $status-color
+                                margin-top: 2px

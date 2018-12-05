@@ -1,0 +1,132 @@
+;~function () {
+    var app = function () {
+        this.nav = $('.nav-item');
+        this.navGroup = $('[data-selector="nav"]');
+        this.title = $('[data-selector="title"]');
+        //数据加载的选择器
+        this._up_nav = $('[data-selector="up-nav-group"]');
+        this.my_up_nav = $('[data-selector="my-up-nav-group"]');
+        this.columnApi = 'bbs/Article/column';
+        this.bbsPageGroup;
+        //内容选择器
+        this.officialContext = $('[data-selector="official-context"]');
+        this.page = 1;
+        this.size = 10;
+        this.load = $('._load');
+        this.loading = $('._loading');
+        this._undefined = $('._undefined');
+        //details
+        this.detailsContext = $('[data-selector="details-context"]');
+        this.assessContext = $('[data-selector="assess-context"]');
+        //执行
+    };
+    app.prototype.init = function () {
+        var self = this;
+        self.sitMainReFresh();
+        if(!api.pageParam.id) return self.sitMainAll();
+        self.loading.hide();
+        self._undefined.show();
+    };
+    app.prototype.sitMainReFresh = function () {
+        var self = this;
+        api.setCustomRefreshHeaderInfo({
+            bgColor: '#f2f2f2',
+            image: {
+                pull: 'widget://res/pull/pull.png',
+                transform: [
+                    'widget://res/pull/pull.png',
+                    'widget://res/pull/pull2.png',
+                ],
+                load: [
+                    'widget://res/pull/pull.png',
+                    'widget://res/pull/pull2.png',
+                ]
+            }
+        }, function() {
+            self.page = 1;
+            async.waterfall([
+                function (cb) {
+                    self.sitMainAll(cb);
+                }
+            ],function () {
+                if(!api.pageParam.id) {
+                    $.api.toast('刷新成功');
+                    setTimeout(function () {
+                        api.refreshHeaderLoadDone();
+                    },500);
+                    return self.sitMainAll()
+                };
+                $.api.toast('请登陆后再试');
+                setTimeout(function () {
+                    api.refreshHeaderLoadDone();
+                },500);
+            });
+        });
+    };
+    //所有东西
+    app.prototype.sitMainAll = function (callback) {
+        var self = this;
+        callback = typeof callback == 'function' ? callback : function () {};
+        async.waterfall([
+            function (cb) {
+                self.getSitLists(cb);
+            },
+            function (ret , cb) {
+                self.htmlMainLists(ret ,cb );
+            }
+        ],function (err,ret) {
+            callback();
+            self.loading.hide();
+            $.echo();
+            if(err) $.api.toast('error:' + err);
+            if(typeof ret.data.info == 'undefined' || !ret.data.info.length) return self.notFind();
+            if(ret.data.info.length < self.size) self.appendNotFind();
+        });
+    };
+    app.prototype.getSitLists = function (callback) {
+        $.ajax({
+            url : 'bbs/topic/list'
+        }).then( callback );
+    };
+    app.prototype.sitMainHtml = function (db) {
+        var html = '';
+        db = db.data.info || [];
+        db.forEach(function (item , i) {
+            html += '<div class="list-item"';
+            html += ' data-event="openNewWin" data-params=\'{"name":"win_bbs_details","param":{"id":"';
+            html += item.id;
+            html += '","type":"sit"}}\'><div class="list-item-head"><div class="head-left" data-echo-background="';
+            html += item.avatar;
+            html += '"></div><div class="head-right">';
+            html += item.nick;
+            html += '</div></div><div class="list-item-content"><div class="content-top">';
+            html += item.content;
+            html += '</div>';
+            if(item.cover){
+                html += '<div class="content-center" data-echo-background="';
+                html += item.cover;
+                html += '"></div>';
+            };
+            html += '<div class="content-bottom"><div class="content-bottom-left">';
+            html += item.ago;
+            html += '</div><div class="content-bottom-right"><div class="right-item"><div class="icon icon-love"></div><div class="text">赞</div></div><div class="right-item">';
+            html += '<div class="icon icon-talk"></div><div class="text">评论</div></div></div></div></div></div>';
+        });
+        return html;
+    };
+    app.prototype.htmlMainLists = function (ret,callback) {
+        var self = this;
+        self.officialContext.html( self.sitMainHtml(ret) );
+        callback( null, ret );
+    };
+    app.prototype.appendNotFind = function ($p) {
+        if(!$p)return this.load.html('后面没有了');
+        this.load.html('<i class="icon-spin3 animate-spin"></i>');
+    };
+    app.prototype.notFind = function () {
+        this._undefined.show();
+    };
+    $.bbsOther = function () {
+        return new app();
+    }
+}();
